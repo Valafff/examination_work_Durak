@@ -1,35 +1,35 @@
-//ДУРАК  !!!9 + !!!
-//Карты отрисовывать.На карте есть номинал и масть.В зависимости от масти карты соответствующего цвета - красного или чёрного.
-//В левом верхнем углу отрисовывается оставшаяся после раздачи колода.
-//На "рубашке" верхней карты отображается количество оставшихся в колоде карт.Рядом показана карта козырной масти.
-//Снизу отображаются карты из "руки" пользователя.В верхней части окна - отображаются карты бота.Карты отображаются "рубашками" вверх.
-//Первым осуществляет ход тот, у кого есть козырная карта меньшего номинала.Карту нужно "предъявить" перед первым ходом. (Это происходит автоматически и для бота и для пользователя)
-//Перемешение между картами пользователя осуществляется стрелочками.Выбираемая карты выдвигается вверх из общего ряда.Подтверждение выбора - нажатие Enter.
-//Если происходит попытка отбиться - нужно проверять карту на соответствие моменту.Т.е.чтобы выбранной картой можно было отбить карту, лежащую на "столе" или подбросить, если отбивается бот.
+п»ї//Р”РЈР РђРљ  !!!9 + !!!
+//РљР°СЂС‚С‹ РѕС‚СЂРёСЃРѕРІС‹РІР°С‚СЊ.РќР° РєР°СЂС‚Рµ РµСЃС‚СЊ РЅРѕРјРёРЅР°Р» Рё РјР°СЃС‚СЊ.Р’ Р·Р°РІРёСЃРёРјРѕСЃС‚Рё РѕС‚ РјР°СЃС‚Рё РєР°СЂС‚С‹ СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓСЋС‰РµРіРѕ С†РІРµС‚Р° - РєСЂР°СЃРЅРѕРіРѕ РёР»Рё С‡С‘СЂРЅРѕРіРѕ.
+//Р’ Р»РµРІРѕРј РІРµСЂС…РЅРµРј СѓРіР»Сѓ РѕС‚СЂРёСЃРѕРІС‹РІР°РµС‚СЃСЏ РѕСЃС‚Р°РІС€Р°СЏСЃСЏ РїРѕСЃР»Рµ СЂР°Р·РґР°С‡Рё РєРѕР»РѕРґР°.
+//РќР° "СЂСѓР±Р°С€РєРµ" РІРµСЂС…РЅРµР№ РєР°СЂС‚С‹ РѕС‚РѕР±СЂР°Р¶Р°РµС‚СЃСЏ РєРѕР»РёС‡РµСЃС‚РІРѕ РѕСЃС‚Р°РІС€РёС…СЃСЏ РІ РєРѕР»РѕРґРµ РєР°СЂС‚.Р СЏРґРѕРј РїРѕРєР°Р·Р°РЅР° РєР°СЂС‚Р° РєРѕР·С‹СЂРЅРѕР№ РјР°СЃС‚Рё.
+//РЎРЅРёР·Сѓ РѕС‚РѕР±СЂР°Р¶Р°СЋС‚СЃСЏ РєР°СЂС‚С‹ РёР· "СЂСѓРєРё" РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ.Р’ РІРµСЂС…РЅРµР№ С‡Р°СЃС‚Рё РѕРєРЅР° - РѕС‚РѕР±СЂР°Р¶Р°СЋС‚СЃСЏ РєР°СЂС‚С‹ Р±РѕС‚Р°.РљР°СЂС‚С‹ РѕС‚РѕР±СЂР°Р¶Р°СЋС‚СЃСЏ "СЂСѓР±Р°С€РєР°РјРё" РІРІРµСЂС….
+//РџРµСЂРІС‹Рј РѕСЃСѓС‰РµСЃС‚РІР»СЏРµС‚ С…РѕРґ С‚РѕС‚, Сѓ РєРѕРіРѕ РµСЃС‚СЊ РєРѕР·С‹СЂРЅР°СЏ РєР°СЂС‚Р° РјРµРЅСЊС€РµРіРѕ РЅРѕРјРёРЅР°Р»Р°.РљР°СЂС‚Сѓ РЅСѓР¶РЅРѕ "РїСЂРµРґСЉСЏРІРёС‚СЊ" РїРµСЂРµРґ РїРµСЂРІС‹Рј С…РѕРґРѕРј. (Р­С‚Рѕ РїСЂРѕРёСЃС…РѕРґРёС‚ Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРё Рё РґР»СЏ Р±РѕС‚Р° Рё РґР»СЏ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ)
+//РџРµСЂРµРјРµС€РµРЅРёРµ РјРµР¶РґСѓ РєР°СЂС‚Р°РјРё РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ РѕСЃСѓС‰РµСЃС‚РІР»СЏРµС‚СЃСЏ СЃС‚СЂРµР»РѕС‡РєР°РјРё.Р’С‹Р±РёСЂР°РµРјР°СЏ РєР°СЂС‚С‹ РІС‹РґРІРёРіР°РµС‚СЃСЏ РІРІРµСЂС… РёР· РѕР±С‰РµРіРѕ СЂСЏРґР°.РџРѕРґС‚РІРµСЂР¶РґРµРЅРёРµ РІС‹Р±РѕСЂР° - РЅР°Р¶Р°С‚РёРµ Enter.
+//Р•СЃР»Рё РїСЂРѕРёСЃС…РѕРґРёС‚ РїРѕРїС‹С‚РєР° РѕС‚Р±РёС‚СЊСЃСЏ - РЅСѓР¶РЅРѕ РїСЂРѕРІРµСЂСЏС‚СЊ РєР°СЂС‚Сѓ РЅР° СЃРѕРѕС‚РІРµС‚СЃС‚РІРёРµ РјРѕРјРµРЅС‚Сѓ.Рў.Рµ.С‡С‚РѕР±С‹ РІС‹Р±СЂР°РЅРЅРѕР№ РєР°СЂС‚РѕР№ РјРѕР¶РЅРѕ Р±С‹Р»Рѕ РѕС‚Р±РёС‚СЊ РєР°СЂС‚Сѓ, Р»РµР¶Р°С‰СѓСЋ РЅР° "СЃС‚РѕР»Рµ" РёР»Рё РїРѕРґР±СЂРѕСЃРёС‚СЊ, РµСЃР»Рё РѕС‚Р±РёРІР°РµС‚СЃСЏ Р±РѕС‚.
 
 //v 1_01
-//Исправлено: 
-//1. Глюк при доборе карт, когда игроки не могли взять все карты из колоды, добор по очереди последних карт колоды пока корректно не реализован
-//2. Глюк, когда у игрока или бота было меньше 6 карт, а колода добора пуста функция BITO не срабатывала 
-//Добавлено:
-//1.Функция ограничивающая поле ввода символов и выводящая * при вводе пароля
+//РСЃРїСЂР°РІР»РµРЅРѕ: 
+//1. Р“Р»СЋРє РїСЂРё РґРѕР±РѕСЂРµ РєР°СЂС‚, РєРѕРіРґР° РёРіСЂРѕРєРё РЅРµ РјРѕРіР»Рё РІР·СЏС‚СЊ РІСЃРµ РєР°СЂС‚С‹ РёР· РєРѕР»РѕРґС‹, РґРѕР±РѕСЂ РїРѕ РѕС‡РµСЂРµРґРё РїРѕСЃР»РµРґРЅРёС… РєР°СЂС‚ РєРѕР»РѕРґС‹ РїРѕРєР° РєРѕСЂСЂРµРєС‚РЅРѕ РЅРµ СЂРµР°Р»РёР·РѕРІР°РЅ
+//2. Р“Р»СЋРє, РєРѕРіРґР° Сѓ РёРіСЂРѕРєР° РёР»Рё Р±РѕС‚Р° Р±С‹Р»Рѕ РјРµРЅСЊС€Рµ 6 РєР°СЂС‚, Р° РєРѕР»РѕРґР° РґРѕР±РѕСЂР° РїСѓСЃС‚Р° С„СѓРЅРєС†РёСЏ BITO РЅРµ СЃСЂР°Р±Р°С‚С‹РІР°Р»Р° 
+//Р”РѕР±Р°РІР»РµРЅРѕ:
+//1.Р¤СѓРЅРєС†РёСЏ РѕРіСЂР°РЅРёС‡РёРІР°СЋС‰Р°СЏ РїРѕР»Рµ РІРІРѕРґР° СЃРёРјРІРѕР»РѕРІ Рё РІС‹РІРѕРґСЏС‰Р°СЏ * РїСЂРё РІРІРѕРґРµ РїР°СЂРѕР»СЏ
 
 //v 1_02
-// Исправлено:
-//1. Исправлена работа функции добора - игроки берут карты поровну вслучае если карт в колоде меньше чем нужно игрокам.
-//2. Исправлена ошибка, когда бот отбился - на столе 12 карт, а игрок мог ему подкидывать карты (правильность работы не проверена)
-//3. Исправлена ошибка, когда игрок отбился - на столе 12 карт, а бот мог ему подкидывать карты (правильность работы не проверена)
-//4. Исправдена ошибка пересчета шага координат для игрока, передовался шаг координат карт бота.
-// Добавлено:
-//1. Отображаются символы кириллицы
-//2. Отцентрировано стартовое меню
-//3. Добавлен костыль с зарисовкой крайней правой нижней ячейки через  SetPixel 
-//4. Добавлено контрольное обнуление массивов структур NullPoolCards (есть подозрение, что из-за этого при повторных матчах возникали глюки с добром тк. в массивах структур содержался мусор)
-//5. Реализован подброс карт игроком и ботом
+// РСЃРїСЂР°РІР»РµРЅРѕ:
+//1. РСЃРїСЂР°РІР»РµРЅР° СЂР°Р±РѕС‚Р° С„СѓРЅРєС†РёРё РґРѕР±РѕСЂР° - РёРіСЂРѕРєРё Р±РµСЂСѓС‚ РєР°СЂС‚С‹ РїРѕСЂРѕРІРЅСѓ РІСЃР»СѓС‡Р°Рµ РµСЃР»Рё РєР°СЂС‚ РІ РєРѕР»РѕРґРµ РјРµРЅСЊС€Рµ С‡РµРј РЅСѓР¶РЅРѕ РёРіСЂРѕРєР°Рј.
+//2. РСЃРїСЂР°РІР»РµРЅР° РѕС€РёР±РєР°, РєРѕРіРґР° Р±РѕС‚ РѕС‚Р±РёР»СЃСЏ - РЅР° СЃС‚РѕР»Рµ 12 РєР°СЂС‚, Р° РёРіСЂРѕРє РјРѕРі РµРјСѓ РїРѕРґРєРёРґС‹РІР°С‚СЊ РєР°СЂС‚С‹ (РїСЂР°РІРёР»СЊРЅРѕСЃС‚СЊ СЂР°Р±РѕС‚С‹ РЅРµ РїСЂРѕРІРµСЂРµРЅР°)
+//3. РСЃРїСЂР°РІР»РµРЅР° РѕС€РёР±РєР°, РєРѕРіРґР° РёРіСЂРѕРє РѕС‚Р±РёР»СЃСЏ - РЅР° СЃС‚РѕР»Рµ 12 РєР°СЂС‚, Р° Р±РѕС‚ РјРѕРі РµРјСѓ РїРѕРґРєРёРґС‹РІР°С‚СЊ РєР°СЂС‚С‹ (РїСЂР°РІРёР»СЊРЅРѕСЃС‚СЊ СЂР°Р±РѕС‚С‹ РЅРµ РїСЂРѕРІРµСЂРµРЅР°)
+//4. РСЃРїСЂР°РІРґРµРЅР° РѕС€РёР±РєР° РїРµСЂРµСЃС‡РµС‚Р° С€Р°РіР° РєРѕРѕСЂРґРёРЅР°С‚ РґР»СЏ РёРіСЂРѕРєР°, РїРµСЂРµРґРѕРІР°Р»СЃСЏ С€Р°Рі РєРѕРѕСЂРґРёРЅР°С‚ РєР°СЂС‚ Р±РѕС‚Р°.
+// Р”РѕР±Р°РІР»РµРЅРѕ:
+//1. РћС‚РѕР±СЂР°Р¶Р°СЋС‚СЃСЏ СЃРёРјРІРѕР»С‹ РєРёСЂРёР»Р»РёС†С‹
+//2. РћС‚С†РµРЅС‚СЂРёСЂРѕРІР°РЅРѕ СЃС‚Р°СЂС‚РѕРІРѕРµ РјРµРЅСЋ
+//3. Р”РѕР±Р°РІР»РµРЅ РєРѕСЃС‚С‹Р»СЊ СЃ Р·Р°СЂРёСЃРѕРІРєРѕР№ РєСЂР°Р№РЅРµР№ РїСЂР°РІРѕР№ РЅРёР¶РЅРµР№ СЏС‡РµР№РєРё С‡РµСЂРµР·  SetPixel 
+//4. Р”РѕР±Р°РІР»РµРЅРѕ РєРѕРЅС‚СЂРѕР»СЊРЅРѕРµ РѕР±РЅСѓР»РµРЅРёРµ РјР°СЃСЃРёРІРѕРІ СЃС‚СЂСѓРєС‚СѓСЂ NullPoolCards (РµСЃС‚СЊ РїРѕРґРѕР·СЂРµРЅРёРµ, С‡С‚Рѕ РёР·-Р·Р° СЌС‚РѕРіРѕ РїСЂРё РїРѕРІС‚РѕСЂРЅС‹С… РјР°С‚С‡Р°С… РІРѕР·РЅРёРєР°Р»Рё РіР»СЋРєРё СЃ РґРѕР±СЂРѕРј С‚Рє. РІ РјР°СЃСЃРёРІР°С… СЃС‚СЂСѓРєС‚СѓСЂ СЃРѕРґРµСЂР¶Р°Р»СЃСЏ РјСѓСЃРѕСЂ)
+//5. Р РµР°Р»РёР·РѕРІР°РЅ РїРѕРґР±СЂРѕСЃ РєР°СЂС‚ РёРіСЂРѕРєРѕРј Рё Р±РѕС‚РѕРј
 
 //v 1_03
-// Исправлено:
-//1. Исправлена ошибка с генерацией карт - переменные условий не обнулялись
+// РСЃРїСЂР°РІР»РµРЅРѕ:
+//1. РСЃРїСЂР°РІР»РµРЅР° РѕС€РёР±РєР° СЃ РіРµРЅРµСЂР°С†РёРµР№ РєР°СЂС‚ - РїРµСЂРµРјРµРЅРЅС‹Рµ СѓСЃР»РѕРІРёР№ РЅРµ РѕР±РЅСѓР»СЏР»РёСЃСЊ
 
 #include <iostream>
 #include <string.h>
@@ -40,10 +40,10 @@
 //#include <algorithm>
 #include <io.h>
 
-#include <fstream> // запись/чтение в файл
-#include <sstream>  // Требуется для работы функций toString и fromString
+#include <fstream> // Р·Р°РїРёСЃСЊ/С‡С‚РµРЅРёРµ РІ С„Р°Р№Р»
+#include <sstream>  // РўСЂРµР±СѓРµС‚СЃСЏ РґР»СЏ СЂР°Р±РѕС‚С‹ С„СѓРЅРєС†РёР№ toString Рё fromString
 
-// Предварительные настройки игры
+// РџСЂРµРґРІР°СЂРёС‚РµР»СЊРЅС‹Рµ РЅР°СЃС‚СЂРѕР№РєРё РёРіСЂС‹
 
 int sleep1000 = 1000;
 int sleep300 = 300;
@@ -51,10 +51,10 @@ int sleep175 = 175;
 int sleep75 = 75;
 bool intro = 1;
 
-// Вероятность подбрасывания ботом карт в начале игры
+// Р’РµСЂРѕСЏС‚РЅРѕСЃС‚СЊ РїРѕРґР±СЂР°СЃС‹РІР°РЅРёСЏ Р±РѕС‚РѕРј РєР°СЂС‚ РІ РЅР°С‡Р°Р»Рµ РёРіСЂС‹
 int chance_to_drop = 85; //67-85%
 
-// Только для презентации
+// РўРѕР»СЊРєРѕ РґР»СЏ РїСЂРµР·РµРЅС‚Р°С†РёРё
 bool presentation_pause = 0;
 
 using namespace std;
@@ -78,17 +78,17 @@ void SetColor(Color text, Color background)
 }
 void SetCursor(int x, int y)
 {
-	COORD myCoords = { x,y };//инициализируем передаваемыми значениями объект координат
+	COORD myCoords = { x,y };//РёРЅРёС†РёР°Р»РёР·РёСЂСѓРµРј РїРµСЂРµРґР°РІР°РµРјС‹РјРё Р·РЅР°С‡РµРЅРёСЏРјРё РѕР±СЉРµРєС‚ РєРѕРѕСЂРґРёРЅР°С‚
 	SetConsoleCursorPosition(hStdOut, myCoords);
 }
 enum Direction { Up = 72, Left = 75, Right = 77, Down = 80, Enter = 13, esc = 27 };
 void setCursor(int x, int y)
 {
-	COORD myCoords = { x,y };//инициализируем передаваемыми значениями объект координат
+	COORD myCoords = { x,y };//РёРЅРёС†РёР°Р»РёР·РёСЂСѓРµРј РїРµСЂРµРґР°РІР°РµРјС‹РјРё Р·РЅР°С‡РµРЅРёСЏРјРё РѕР±СЉРµРєС‚ РєРѕРѕСЂРґРёРЅР°С‚
 	SetConsoleCursorPosition(hStdOut, myCoords);
 }
 
-//Чистка памяти от данных двумерного динамического массива
+//Р§РёСЃС‚РєР° РїР°РјСЏС‚Рё РѕС‚ РґР°РЅРЅС‹С… РґРІСѓРјРµСЂРЅРѕРіРѕ РґРёРЅР°РјРёС‡РµСЃРєРѕРіРѕ РјР°СЃСЃРёРІР°
 template <typename Tarr>
 void Delete_D_Arr(Tarr** arr, int row)
 {
@@ -102,46 +102,46 @@ void Delete_D_Arr(Tarr** arr, int row)
 	}
 }
 
-// Колода карт
+// РљРѕР»РѕРґР° РєР°СЂС‚
 
 struct  Koloda
 {
-	// Номинал
+	// РќРѕРјРёРЅР°Р»
 	int number;
-	// Масть
+	// РњР°СЃС‚СЊ
 	char suit;
-	//название карты
+	//РЅР°Р·РІР°РЅРёРµ РєР°СЂС‚С‹
 	string name;
-	// Козырь
+	// РљРѕР·С‹СЂСЊ
 	bool trump;
 };
 
-// Русификация
-// Способ проще: WinAPI system("chcp 1251>NUL"); system("chcp 866>NUL"); НО! Побочка - если записывается массив - комп очень долго думает Правильно без файла!: system("chcp 1251 > NUL"); system("chcp 866 > NUL");
-// < -это перенаправление ввода программы, так же как > -перенаправление стандартного вывода программы.NUL - это устройство(псевдофайл), точнее пустое устройство.Вывод в него не даёт ничего, а ввод эквивалентен чтению пустого файла.
+// Р СѓСЃРёС„РёРєР°С†РёСЏ
+// РЎРїРѕСЃРѕР± РїСЂРѕС‰Рµ: WinAPI system("chcp 1251>NUL"); system("chcp 866>NUL"); РќРћ! РџРѕР±РѕС‡РєР° - РµСЃР»Рё Р·Р°РїРёСЃС‹РІР°РµС‚СЃСЏ РјР°СЃСЃРёРІ - РєРѕРјРї РѕС‡РµРЅСЊ РґРѕР»РіРѕ РґСѓРјР°РµС‚ РџСЂР°РІРёР»СЊРЅРѕ Р±РµР· С„Р°Р№Р»Р°!: system("chcp 1251 > NUL"); system("chcp 866 > NUL");
+// < -СЌС‚Рѕ РїРµСЂРµРЅР°РїСЂР°РІР»РµРЅРёРµ РІРІРѕРґР° РїСЂРѕРіСЂР°РјРјС‹, С‚Р°Рє Р¶Рµ РєР°Рє > -РїРµСЂРµРЅР°РїСЂР°РІР»РµРЅРёРµ СЃС‚Р°РЅРґР°СЂС‚РЅРѕРіРѕ РІС‹РІРѕРґР° РїСЂРѕРіСЂР°РјРјС‹.NUL - СЌС‚Рѕ СѓСЃС‚СЂРѕР№СЃС‚РІРѕ(РїСЃРµРІРґРѕС„Р°Р№Р»), С‚РѕС‡РЅРµРµ РїСѓСЃС‚РѕРµ СѓСЃС‚СЂРѕР№СЃС‚РІРѕ.Р’С‹РІРѕРґ РІ РЅРµРіРѕ РЅРµ РґР°С‘С‚ РЅРёС‡РµРіРѕ, Р° РІРІРѕРґ СЌРєРІРёРІР°Р»РµРЅС‚РµРЅ С‡С‚РµРЅРёСЋ РїСѓСЃС‚РѕРіРѕ С„Р°Р№Р»Р°.
 
 //void RUCIN(char magic[])
 
 string RUCIN(string input)
 {
 	char magic[256];
-	// c_str() формирует массив строк в стиле си
+	// c_str() С„РѕСЂРјРёСЂСѓРµС‚ РјР°СЃСЃРёРІ СЃС‚СЂРѕРє РІ СЃС‚РёР»Рµ СЃРё
 	strcpy_s(magic, input.c_str());
 
 	int delta = 256;
 	for (size_t i = 0; magic[i] != '\0'; i++)
 	{
-		// Ё
+		// РЃ
 		if ((int)magic[i] + delta == 168)
 		{
 			magic[i] += 72;
 		}
-		// ё
+		// С‘
 		else if ((int)magic[i] + delta == 184)
 		{
 			magic[i] += 57;
 		}
-		//А-я
+		//Рђ-СЏ
 		else if ((int)magic[i] + delta >= 192 and (int)magic[i] + delta <= 239)
 		{
 			magic[i] -= 64;
@@ -155,9 +155,9 @@ string RUCIN(string input)
 }
 
 
-//Настройки пользователей/игроков
+//РќР°СЃС‚СЂРѕР№РєРё РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№/РёРіСЂРѕРєРѕРІ
 
-//Функция ввода логина или пароля
+//Р¤СѓРЅРєС†РёСЏ РІРІРѕРґР° Р»РѕРіРёРЅР° РёР»Рё РїР°СЂРѕР»СЏ
 string Login_Password(char lp = 'L')
 {
 	char Login[18];
@@ -227,7 +227,7 @@ struct Gamers
 	int wins = 0;
 };
 
-// Запись данных в  строку структуры GamersTable
+// Р—Р°РїРёСЃСЊ РґР°РЅРЅС‹С… РІ  СЃС‚СЂРѕРєСѓ СЃС‚СЂСѓРєС‚СѓСЂС‹ GamersTable
 void AddDataToGamersTableRow(Gamers& GamersTable, string username, string userpassword, int user_id = 0, int games = 0, int wins = 0)
 {
 	GamersTable.user_id = user_id;
@@ -237,7 +237,7 @@ void AddDataToGamersTableRow(Gamers& GamersTable, string username, string userpa
 	GamersTable.wins = wins;
 }
 
-// Запись в конкретную строку таблицы структуры
+// Р—Р°РїРёСЃСЊ РІ РєРѕРЅРєСЂРµС‚РЅСѓСЋ СЃС‚СЂРѕРєСѓ С‚Р°Р±Р»РёС†С‹ СЃС‚СЂСѓРєС‚СѓСЂС‹
 void AddDataToGamersTableRowZ(Gamers* GamersTable, string username, string userpassword, int user_id = 0, int games = 0, int wins = 0)
 {
 	GamersTable[user_id].user_id = user_id;
@@ -249,7 +249,7 @@ void AddDataToGamersTableRowZ(Gamers* GamersTable, string username, string userp
 
 
 
-// Запись данных в таблицу структуры GamersTable
+// Р—Р°РїРёСЃСЊ РґР°РЅРЅС‹С… РІ С‚Р°Р±Р»РёС†Сѓ СЃС‚СЂСѓРєС‚СѓСЂС‹ GamersTable
 void AddDataToGamersTable(Gamers* PlayersTable, string& username, string& userpassword, int user_id = 0, int games = 0, int wins = 0, int player_number = 0, bool add = true)
 {
 	if (add)
@@ -265,18 +265,18 @@ void AddDataToGamersTable(Gamers* PlayersTable, string& username, string& userpa
 
 
 //
-//БЛОК РАБОТЫ С ФАЙЛАМИ НАЧАЛО
+//Р‘Р›РћРљ Р РђР‘РћРўР« РЎ Р¤РђР™Р›РђРњР РќРђР§РђР›Рћ
 //
 
 int number_columns_in_file = 5;
-// переменная для функции подсчета строк
+// РїРµСЂРµРјРµРЅРЅР°СЏ РґР»СЏ С„СѓРЅРєС†РёРё РїРѕРґСЃС‡РµС‚Р° СЃС‚СЂРѕРє
 string temp;
 
-//Функция подсчета строки из файла
+//Р¤СѓРЅРєС†РёСЏ РїРѕРґСЃС‡РµС‚Р° СЃС‚СЂРѕРєРё РёР· С„Р°Р№Р»Р°
 int FuncReadF_row_number(string str)
 {
 	int col = 0;
-	//Открытие потока для чтения из файла
+	//РћС‚РєСЂС‹С‚РёРµ РїРѕС‚РѕРєР° РґР»СЏ С‡С‚РµРЅРёСЏ РёР· С„Р°Р№Р»Р°
 	ifstream from_file("PlayersSuperSecureData.txt");
 	if (from_file.is_open())
 	{
@@ -295,10 +295,10 @@ int FuncReadF_row_number(string str)
 	return col;
 }
 
-//Функция записи значений в файл
+//Р¤СѓРЅРєС†РёСЏ Р·Р°РїРёСЃРё Р·РЅР°С‡РµРЅРёР№ РІ С„Р°Р№Р»
 void AddGamersTableRowDataToFile(int player_id, string player_name, string player_password, int games, int wins)
 {
-	ofstream to_file("PlayersSuperSecureData.txt", ios::app); // ::app - добавление в конец файла
+	ofstream to_file("PlayersSuperSecureData.txt", ios::app); // ::app - РґРѕР±Р°РІР»РµРЅРёРµ РІ РєРѕРЅРµС† С„Р°Р№Р»Р°
 	if (to_file.is_open())
 	{
 		if (player_id != -1)
@@ -314,14 +314,14 @@ void AddGamersTableRowDataToFile(int player_id, string player_name, string playe
 }
 
 // https://ru.stackoverflow.com/questions/667229/%D0%97%D0%B0%D0%BF%D0%B8%D1%81%D1%8C-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85-%D0%B8%D0%B7-%D1%84%D0%B0%D0%B9%D0%BB%D0%B0-%D0%B2-%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D1%83-%D1%81
-// istream -интерфейс для чтения данных из потока, ifstream - производный класс
+// istream -РёРЅС‚РµСЂС„РµР№СЃ РґР»СЏ С‡С‚РµРЅРёСЏ РґР°РЅРЅС‹С… РёР· РїРѕС‚РѕРєР°, ifstream - РїСЂРѕРёР·РІРѕРґРЅС‹Р№ РєР»Р°СЃСЃ
 istream& operator>> (istream& is, Gamers& gt)
 {
 	is >> gt.user_id >> gt.name >> gt.password >> gt.games >> gt.wins;
 	return is;
 }
 
-//Функция чтения данных из файла и их записи в структуру GamersTable
+//Р¤СѓРЅРєС†РёСЏ С‡С‚РµРЅРёСЏ РґР°РЅРЅС‹С… РёР· С„Р°Р№Р»Р° Рё РёС… Р·Р°РїРёСЃРё РІ СЃС‚СЂСѓРєС‚СѓСЂСѓ GamersTable
 void ReadFileToGamersTableRow(Gamers& GamersTable, int count)
 {
 
@@ -332,7 +332,7 @@ void ReadFileToGamersTableRow(Gamers& GamersTable, int count)
 		{
 			from_file.ignore(256, '\n');
 		}
-		//Работает только с is
+		//Р Р°Р±РѕС‚Р°РµС‚ С‚РѕР»СЊРєРѕ СЃ is
 		from_file >> GamersTable;
 	}
 	else
@@ -341,7 +341,7 @@ void ReadFileToGamersTableRow(Gamers& GamersTable, int count)
 	}
 	from_file.close();
 }
-//Функция чтения данных из файла и их записи в таблицу структуры GamersTable
+//Р¤СѓРЅРєС†РёСЏ С‡С‚РµРЅРёСЏ РґР°РЅРЅС‹С… РёР· С„Р°Р№Р»Р° Рё РёС… Р·Р°РїРёСЃРё РІ С‚Р°Р±Р»РёС†Сѓ СЃС‚СЂСѓРєС‚СѓСЂС‹ GamersTable
 void ReadFileToGamersTable(Gamers* GamersTable, int number_row)
 {
 	ifstream from_file("PlayersSuperSecureData.txt", ios::binary);
@@ -353,10 +353,10 @@ void ReadFileToGamersTable(Gamers* GamersTable, int number_row)
 	from_file.close();
 }
 
-// Функция для перезаписи файла с учетом удаленной позиции
+// Р¤СѓРЅРєС†РёСЏ РґР»СЏ РїРµСЂРµР·Р°РїРёСЃРё С„Р°Р№Р»Р° СЃ СѓС‡РµС‚РѕРј СѓРґР°Р»РµРЅРЅРѕР№ РїРѕР·РёС†РёРё
 void ReWriteFileGamersTable(Gamers* GamersTable, int size, int rkey)
 {
-	ofstream to_file("PlayersSuperSecureData.txt", ios::out); // ::out - поток открывается для записи в файл, старые данные в файле удаляются
+	ofstream to_file("PlayersSuperSecureData.txt", ios::out); // ::out - РїРѕС‚РѕРє РѕС‚РєСЂС‹РІР°РµС‚СЃСЏ РґР»СЏ Р·Р°РїРёСЃРё РІ С„Р°Р№Р», СЃС‚Р°СЂС‹Рµ РґР°РЅРЅС‹Рµ РІ С„Р°Р№Р»Рµ СѓРґР°Р»СЏСЋС‚СЃСЏ
 	if (to_file.is_open())
 	{
 		int count_slot = 0;
@@ -377,10 +377,10 @@ void ReWriteFileGamersTable(Gamers* GamersTable, int size, int rkey)
 	to_file.close();
 }
 
-// Функция перезаписи файла с учетом изменений Games and Wins
+// Р¤СѓРЅРєС†РёСЏ РїРµСЂРµР·Р°РїРёСЃРё С„Р°Р№Р»Р° СЃ СѓС‡РµС‚РѕРј РёР·РјРµРЅРµРЅРёР№ Games and Wins
 void ReWriteFileGamersTable(Gamers* GamersTable, int size)
 {
-	ofstream to_file("PlayersSuperSecureData.txt", ios::out); // ::out - поток открывается для записи в файл, старые данные в файле удаляются
+	ofstream to_file("PlayersSuperSecureData.txt", ios::out); // ::out - РїРѕС‚РѕРє РѕС‚РєСЂС‹РІР°РµС‚СЃСЏ РґР»СЏ Р·Р°РїРёСЃРё РІ С„Р°Р№Р», СЃС‚Р°СЂС‹Рµ РґР°РЅРЅС‹Рµ РІ С„Р°Р№Р»Рµ СѓРґР°Р»СЏСЋС‚СЃСЏ
 	if (to_file.is_open())
 	{
 		int count_slot = 0;
@@ -398,14 +398,14 @@ void ReWriteFileGamersTable(Gamers* GamersTable, int size)
 }
 
 //
-//БЛОК РАБОТЫ С ФАЙЛАМИ КОНЕЦ
+//Р‘Р›РћРљ Р РђР‘РћРўР« РЎ Р¤РђР™Р›РђРњР РљРћРќР•Р¦
 //
 
 
 //
-// БЛОК ОТРИСОВКИ ФОНА
+// Р‘Р›РћРљ РћРўР РРЎРћР’РљР Р¤РћРќРђ
 // 
-//"Обнуление" фона
+//"РћР±РЅСѓР»РµРЅРёРµ" С„РѕРЅР°
 void Nullfone(char** fone, int row, int col)
 {
 	int count = 3;
@@ -430,7 +430,7 @@ void Nullfone(char** fone, int row, int col)
 		}
 	}
 }
-//Отрисовка фона(только игровой стол)
+//РћС‚СЂРёСЃРѕРІРєР° С„РѕРЅР°(С‚РѕР»СЊРєРѕ РёРіСЂРѕРІРѕР№ СЃС‚РѕР»)
 void PrintFon(char** fone, int row, int col)
 {
 	int controlj = col - 1;
@@ -461,7 +461,7 @@ void PrintFon(char** fone, int row, int col)
 			}
 		}
 	}
-	// Костыль с бубнухой в правом нижнем углу
+	// РљРѕСЃС‚С‹Р»СЊ СЃ Р±СѓР±РЅСѓС…РѕР№ РІ РїСЂР°РІРѕРј РЅРёР¶РЅРµРј СѓРіР»Сѓ
 	HDC hdc = GetDC(GetConsoleWindow());
 	int x = 1433, delta_x = x + 7;
 	int y = 944, delta_y = y + 16;
@@ -517,9 +517,9 @@ void PrintFon(char** fone, int row, int col)
 }
 
 //
-//БЛОК ОТРИСОВКИ МАССИВОВ
+//Р‘Р›РћРљ РћРўР РРЎРћР’РљР РњРђРЎРЎРР’РћР’
 //
-// Отрисовка массива табло
+// РћС‚СЂРёСЃРѕРІРєР° РјР°СЃСЃРёРІР° С‚Р°Р±Р»Рѕ
 void FillCurrentFone(char** currentfone, int row, int col)
 {
 	for (size_t i = 0; i < row; i++)
@@ -560,7 +560,7 @@ void FillCurrentFone(char** currentfone, int row, int col)
 void PrintCurrentFone(char** arrfone, int row, int col, Color color_1, Color color_2, int X = 0, int Y = 0, bool shadow = true)
 {
 	FillCurrentFone(arrfone, row, col);
-	//тень
+	//С‚РµРЅСЊ
 	if (shadow == true)
 	{
 		for (size_t i = 0; i < row; i++)
@@ -585,7 +585,7 @@ void PrintCurrentFone(char** arrfone, int row, int col, Color color_1, Color col
 			}
 		}
 	}
-	//основнеое меню
+	//РѕСЃРЅРѕРІРЅРµРѕРµ РјРµРЅСЋ
 	for (size_t i = 0; i < row; i++)
 	{
 		SetCursor(X, Y + i);
@@ -600,7 +600,7 @@ void PrintCurrentFone(char** arrfone, int row, int col, Color color_1, Color col
 	}
 }
 
-// Закраска определенным цветом и размеров в указанных координатах
+// Р—Р°РєСЂР°СЃРєР° РѕРїСЂРµРґРµР»РµРЅРЅС‹Рј С†РІРµС‚РѕРј Рё СЂР°Р·РјРµСЂРѕРІ РІ СѓРєР°Р·Р°РЅРЅС‹С… РєРѕРѕСЂРґРёРЅР°С‚Р°С…
 void PrintCurrentFone(char** arrfone, int row, int col, Color color, int X = 0, int Y = 0)
 {
 	for (size_t i = 0; i < row; i++)
@@ -623,7 +623,7 @@ void PrintCurrentFone(char** arrfone, int row, int col, Color color, int X = 0, 
 	}
 }
 
-// Печать таблицы игроков
+// РџРµС‡Р°С‚СЊ С‚Р°Р±Р»РёС†С‹ РёРіСЂРѕРєРѕРІ
 void ShowGamersTable(Gamers* GamersTable, int size, Color color_1, Color color_2, int X = 0, int Y = 0, int dist_1 = 0, int dist_2 = 0, int dist_3 = 0, int dist_4 = 0)
 {
 	SetColor(color_1, color_2);
@@ -641,10 +641,10 @@ void ShowGamersTable(Gamers* GamersTable, int size, Color color_1, Color color_2
 	SetColor(White, Black);
 }
 
-//Функция отрисовки карты
+//Р¤СѓРЅРєС†РёСЏ РѕС‚СЂРёСЃРѕРІРєРё РєР°СЂС‚С‹
 void PrintCard(Koloda& Card, char** card_picture, int X, int Y, int row, int col, Color color_1, Color color_2, bool hidden = false)
 {
-	// Заполнение рубашки
+	// Р—Р°РїРѕР»РЅРµРЅРёРµ СЂСѓР±Р°С€РєРё
 	if (hidden)
 	{
 		for (size_t i = 0; i < row; i++)
@@ -698,7 +698,7 @@ void PrintCard(Koloda& Card, char** card_picture, int X, int Y, int row, int col
 			}
 		}
 	}
-	// Заполнение карты (если hidden == false)
+	// Р—Р°РїРѕР»РЅРµРЅРёРµ РєР°СЂС‚С‹ (РµСЃР»Рё hidden == false)
 	else
 	{
 		for (size_t i = 0; i < row; i++)
@@ -708,7 +708,7 @@ void PrintCard(Koloda& Card, char** card_picture, int X, int Y, int row, int col
 				card_picture[i][j] = ' ';
 			}
 		}
-		//Шестерка
+		//РЁРµСЃС‚РµСЂРєР°
 		if (Card.number == 0)
 		{
 			card_picture[0][0] = Card.number + 54;
@@ -722,7 +722,7 @@ void PrintCard(Koloda& Card, char** card_picture, int X, int Y, int row, int col
 			card_picture[4][6] = Card.suit;
 			card_picture[7][6] = Card.suit;
 		}
-		// Семерка
+		// РЎРµРјРµСЂРєР°
 		if (Card.number == 1)
 		{
 			card_picture[0][0] = Card.number + 54;
@@ -737,7 +737,7 @@ void PrintCard(Koloda& Card, char** card_picture, int X, int Y, int row, int col
 			card_picture[7][6] = Card.suit;
 			card_picture[2][4] = Card.suit;
 		}
-		//Восьмерка
+		//Р’РѕСЃСЊРјРµСЂРєР°
 		if (Card.number == 2)
 		{
 			card_picture[0][0] = Card.number + 54;
@@ -753,7 +753,7 @@ void PrintCard(Koloda& Card, char** card_picture, int X, int Y, int row, int col
 			card_picture[2][4] = Card.suit;
 			card_picture[6][4] = Card.suit;
 		}
-		//Девятка
+		//Р”РµРІСЏС‚РєР°
 		if (Card.number == 3)
 		{
 			card_picture[0][0] = Card.number + 54;
@@ -770,7 +770,7 @@ void PrintCard(Koloda& Card, char** card_picture, int X, int Y, int row, int col
 			card_picture[7][6] = Card.suit;
 			card_picture[4][4] = Card.suit;
 		}
-		//Десятка
+		//Р”РµСЃСЏС‚РєР°
 		if (Card.number == 4)
 		{
 			card_picture[0][0] = Card.number + 45;
@@ -790,7 +790,7 @@ void PrintCard(Koloda& Card, char** card_picture, int X, int Y, int row, int col
 			card_picture[2][4] = Card.suit;
 			card_picture[6][4] = Card.suit;
 		}
-		//Валет
+		//Р’Р°Р»РµС‚
 		if (Card.number == 5)
 		{
 			card_picture[0][0] = Card.number + 69;
@@ -803,7 +803,7 @@ void PrintCard(Koloda& Card, char** card_picture, int X, int Y, int row, int col
 			card_picture[5][4] = Card.number + 70;
 			card_picture[7][4] = Card.number + 6;
 		}
-		//Дама
+		//Р”Р°РјР°
 		if (Card.number == 6)
 		{
 			card_picture[0][0] = Card.number + 75;
@@ -816,7 +816,7 @@ void PrintCard(Koloda& Card, char** card_picture, int X, int Y, int row, int col
 			card_picture[5][4] = Card.number + 63;
 			card_picture[6][4] = Card.number + 72;
 		}
-		//Король
+		//РљРѕСЂРѕР»СЊ
 		if (Card.number == 7)
 		{
 			card_picture[0][0] = Card.number + 68;
@@ -829,7 +829,7 @@ void PrintCard(Koloda& Card, char** card_picture, int X, int Y, int row, int col
 			card_picture[5][4] = Card.number + 64;
 			card_picture[7][4] = Card.number + 4;
 		}
-		//Туз
+		//РўСѓР·
 		if (Card.number == 8)
 		{
 			card_picture[0][0] = Card.number + 57;
@@ -841,7 +841,7 @@ void PrintCard(Koloda& Card, char** card_picture, int X, int Y, int row, int col
 			card_picture[5][4] = Card.number + 61;
 		}
 	}
-	// Отрисовка рубашки карты
+	// РћС‚СЂРёСЃРѕРІРєР° СЂСѓР±Р°С€РєРё РєР°СЂС‚С‹
 	if (hidden)
 	{
 		SetColor(color_1, color_2);
@@ -857,7 +857,7 @@ void PrintCard(Koloda& Card, char** card_picture, int X, int Y, int row, int col
 		}
 		SetColor(White, Black);
 	}
-	// Отрисовка карты
+	// РћС‚СЂРёСЃРѕРІРєР° РєР°СЂС‚С‹
 	else
 	{
 		if (Card.suit == 3 or Card.suit == 4)
@@ -882,7 +882,7 @@ void PrintCard(Koloda& Card, char** card_picture, int X, int Y, int row, int col
 	}
 }
 
-// Функция отрисовки горизонтальной рубашки
+// Р¤СѓРЅРєС†РёСЏ РѕС‚СЂРёСЃРѕРІРєРё РіРѕСЂРёР·РѕРЅС‚Р°Р»СЊРЅРѕР№ СЂСѓР±Р°С€РєРё
 void PrintSuitGorizont(int X, int Y, Color color_1, Color color_2)
 {
 	int card_height = 5;
@@ -967,7 +967,7 @@ void PrintSuitGorizont(int X, int Y, Color color_1, Color color_2)
 	Delete_D_Arr(gor_card, card_height);
 }
 
-//Функция отрисовки букв
+//Р¤СѓРЅРєС†РёСЏ РѕС‚СЂРёСЃРѕРІРєРё Р±СѓРєРІ
 void Latters_Func(char latter, int X, int Y, Color color_1, Color color_2)
 {
 	int card_height = 9;
@@ -984,8 +984,8 @@ void Latters_Func(char latter, int X, int Y, Color color_1, Color color_2)
 			card_latter[i][j] = ' ';
 		}
 	}
-	// Буква Д
-	if (latter == 'Д')
+	// Р‘СѓРєРІР° Р”
+	if (latter == 'Р”')
 	{
 		card_latter[1][4] = '$';
 		card_latter[2][3] = '$';
@@ -1003,8 +1003,8 @@ void Latters_Func(char latter, int X, int Y, Color color_1, Color color_2)
 		card_latter[7][1] = '$';
 		card_latter[7][7] = '$';
 	}
-	// Буква У
-	if (latter == 'У')
+	// Р‘СѓРєРІР° РЈ
+	if (latter == 'РЈ')
 	{
 		card_latter[1][1] = '$';
 		card_latter[1][7] = '$';
@@ -1019,8 +1019,8 @@ void Latters_Func(char latter, int X, int Y, Color color_1, Color color_2)
 		card_latter[7][2] = '$';
 		card_latter[7][3] = '$';
 	}
-	// Буква Р
-	if (latter == 'Р')
+	// Р‘СѓРєРІР° Р 
+	if (latter == 'Р ')
 	{
 		for (size_t i = 0; i < 7; i++)
 		{
@@ -1034,8 +1034,8 @@ void Latters_Func(char latter, int X, int Y, Color color_1, Color color_2)
 		card_latter[2][7] = '$';
 		card_latter[3][7] = '$';
 	}
-	// Буква А
-	if (latter == 'А')
+	// Р‘СѓРєРІР° Рђ
+	if (latter == 'Рђ')
 	{
 		for (size_t i = 0; i < 4; i++)
 		{
@@ -1052,8 +1052,8 @@ void Latters_Func(char latter, int X, int Y, Color color_1, Color color_2)
 		card_latter[3][2] = '$';
 		card_latter[3][6] = '$';
 	}
-	// Буква К
-	if (latter == 'К')
+	// Р‘СѓРєРІР° Рљ
+	if (latter == 'Рљ')
 	{
 		for (size_t i = 0; i < 7; i++)
 		{
@@ -1071,8 +1071,8 @@ void Latters_Func(char latter, int X, int Y, Color color_1, Color color_2)
 		card_latter[5][4] = '$';
 		card_latter[6][5] = '$';
 	}
-	// Буква И
-	if (latter == 'И')
+	// Р‘СѓРєРІР° Р
+	if (latter == 'Р')
 	{
 
 		for (size_t i = 0; i < 7; i++)
@@ -1086,8 +1086,8 @@ void Latters_Func(char latter, int X, int Y, Color color_1, Color color_2)
 		card_latter[3][5] = '$';
 		card_latter[2][6] = '$';
 	}
-	// Буква Г
-	if (latter == 'Г')
+	// Р‘СѓРєРІР° Р“
+	if (latter == 'Р“')
 	{
 
 		for (size_t i = 0; i < 7; i++)
@@ -1096,7 +1096,7 @@ void Latters_Func(char latter, int X, int Y, Color color_1, Color color_2)
 			card_latter[1][1 + i] = '$';
 		}
 	}
-	//Отрисовка буквы
+	//РћС‚СЂРёСЃРѕРІРєР° Р±СѓРєРІС‹
 	SetCursor(X, Y);
 	for (size_t i = 0; i < card_height; i++)
 	{
@@ -1119,7 +1119,7 @@ void Latters_Func(char latter, int X, int Y, Color color_1, Color color_2)
 	Delete_D_Arr(card_latter, card_height);
 }
 
-//Функция раскладки карт на игровом столе(переменная mast  локакльная = 4)
+//Р¤СѓРЅРєС†РёСЏ СЂР°СЃРєР»Р°РґРєРё РєР°СЂС‚ РЅР° РёРіСЂРѕРІРѕРј СЃС‚РѕР»Рµ(РїРµСЂРµРјРµРЅРЅР°СЏ mast  Р»РѕРєР°РєР»СЊРЅР°СЏ = 4)
 void Print_36_cards_on_table(Koloda* Cards, char** card_ico, int width, int height, int cards_number, int card_nominal)
 {
 	int mast = 4;
@@ -1159,7 +1159,7 @@ void Print_36_cards_on_table(Koloda* Cards, char** card_ico, int width, int heig
 	SetColor(White, Red);
 	Sleep(sleep1000 * 2);
 	system("chcp 1251>NUL");
-	cout << "НАЖМИТЕ ЛЮБУЮ КНОПКУ ДЛЯ ПРОДОЛЖЕНИЯ...";
+	cout << "РќРђР–РњРРўР• Р›Р®Р‘РЈР® РљРќРћРџРљРЈ Р”Р›РЇ РџР РћР”РћР›Р–Р•РќРРЇ...";
 	//cout << "PRESS ANY KEY TO CONTINUE...";
 	system("chcp 866>NUL");
 	_getch();
@@ -1181,7 +1181,7 @@ void Print_36_cards_on_table(Koloda* Cards, char** card_ico, int width, int heig
 	}
 }
 
-// Функция печати карт с заданным шагом по горизонтали
+// Р¤СѓРЅРєС†РёСЏ РїРµС‡Р°С‚Рё РєР°СЂС‚ СЃ Р·Р°РґР°РЅРЅС‹Рј С€Р°РіРѕРј РїРѕ РіРѕСЂРёР·РѕРЅС‚Р°Р»Рё
 void Print_players_Cards(Koloda* Current_player_cards, char** card_ico, int number_cards, int X, int Y, int gorizontal_step, bool hidden)
 {
 	SetCursor(X, Y);
@@ -1193,7 +1193,7 @@ void Print_players_Cards(Koloda* Current_player_cards, char** card_ico, int numb
 	}
 }
 
-// Функция раздачи карт игрокам
+// Р¤СѓРЅРєС†РёСЏ СЂР°Р·РґР°С‡Рё РєР°СЂС‚ РёРіСЂРѕРєР°Рј
 void Print_players_Cards(Koloda* Player_cards, Koloda* Bot_cards, char** card_ico, int number_cards, int X_bot, int Y_bot, int X_player, int Y_player, int gorizontal_step)
 {
 	int step_xp = 0;
@@ -1220,7 +1220,7 @@ void Print_players_Cards(Koloda* Player_cards, Koloda* Bot_cards, char** card_ic
 	}
 }
 
-//Отрисовка "Игра Дурак"
+//РћС‚СЂРёСЃРѕРІРєР° "РРіСЂР° Р”СѓСЂР°Рє"
 void Print_Game_durak(Color color_1, Color color_2, bool timeout = true)
 {
 	int x = 14;
@@ -1230,56 +1230,56 @@ void Print_Game_durak(Color color_1, Color color_2, bool timeout = true)
 	{
 		Sleep(sleep175);
 	}
-	Latters_Func('И', x, y, (Color)color_1, (Color)color_2);
+	Latters_Func('Р', x, y, (Color)color_1, (Color)color_2);
 	if (timeout)
 	{
 		Sleep(sleep175);
 	}
-	Latters_Func('Г', x + x_step, y, (Color)color_1, (Color)color_2);
+	Latters_Func('Р“', x + x_step, y, (Color)color_1, (Color)color_2);
 	if (timeout)
 	{
 		Sleep(sleep175);
 	}
-	Latters_Func('Р', x + x_step * 2, y, (Color)color_1, (Color)color_2);
+	Latters_Func('Р ', x + x_step * 2, y, (Color)color_1, (Color)color_2);
 	if (timeout)
 	{
 		Sleep(sleep175);
 	}
-	Latters_Func('А', x + x_step * 3, y, (Color)color_1, (Color)color_2);
+	Latters_Func('Рђ', x + x_step * 3, y, (Color)color_1, (Color)color_2);
 	if (timeout)
 	{
 		Sleep(sleep175);
 	}
-	Latters_Func('Д', x + x_step * 7, y + 18, (Color)color_1, (Color)color_2);
+	Latters_Func('Р”', x + x_step * 7, y + 18, (Color)color_1, (Color)color_2);
 	if (timeout)
 	{
 		Sleep(sleep175);
 	}
-	Latters_Func('У', x + x_step * 8, y + 18, (Color)color_1, (Color)color_2);
+	Latters_Func('РЈ', x + x_step * 8, y + 18, (Color)color_1, (Color)color_2);
 	if (timeout)
 	{
 		Sleep(sleep175);
 	}
-	Latters_Func('Р', x + x_step * 9, y + 18, (Color)color_1, (Color)color_2);
+	Latters_Func('Р ', x + x_step * 9, y + 18, (Color)color_1, (Color)color_2);
 	if (timeout)
 	{
 		Sleep(sleep175);
 	}
-	Latters_Func('А', x + x_step * 10, y + 18, (Color)color_1, (Color)color_2);
+	Latters_Func('Рђ', x + x_step * 10, y + 18, (Color)color_1, (Color)color_2);
 	if (timeout)
 	{
 		Sleep(sleep175);
 	}
-	Latters_Func('К', x + x_step * 11, y + 18, (Color)color_1, (Color)color_2);
+	Latters_Func('Рљ', x + x_step * 11, y + 18, (Color)color_1, (Color)color_2);
 }
 
 //
-//БЛОК МЕНЮ
+//Р‘Р›РћРљ РњР•РќР®
 //
 
 bool boolchioce = false;
 
-//Отрисовка главного меню
+//РћС‚СЂРёСЃРѕРІРєР° РіР»Р°РІРЅРѕРіРѕ РјРµРЅСЋ
 void MainMenuPrint(string* menuarr, int sizemenu, int menupoint)
 {
 	int menurow = 11;
@@ -1324,7 +1324,7 @@ void MainMenuPrint(string* menuarr, int sizemenu, int menupoint)
 	SetColor(White, Black);
 	Delete_D_Arr(menufone, menurow);
 }
-// Выбор пункта меню
+// Р’С‹Р±РѕСЂ РїСѓРЅРєС‚Р° РјРµРЅСЋ
 int SelectMenuItem(string* menuarr, int menusize)
 {
 	int menupoint = 0;
@@ -1365,15 +1365,15 @@ int SelectMenuItem(string* menuarr, int menusize)
 	return quit;
 }
 
-// Вызов окна создания нового пользователя
+// Р’С‹Р·РѕРІ РѕРєРЅР° СЃРѕР·РґР°РЅРёСЏ РЅРѕРІРѕРіРѕ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
 void NewPlayerWindow(char** arrfone, int zrow, int zcol, Color zcolor, Color color_1, Color color_2, int nrow, int ncol, int zX = 0, int zY = 0, int nX = 0, int nY = 0)
 {
 	PrintCurrentFone(arrfone, zrow, zcol, (Color)zcolor, zX, zY);
 	PrintCurrentFone(arrfone, nrow, ncol, (Color)color_1, (Color)color_2, nX, nY);
 }
 
-// Меню yes/no
-//функция подсветки сообщения yes/no и возвращающее значения 1/0
+// РњРµРЅСЋ yes/no
+//С„СѓРЅРєС†РёСЏ РїРѕРґСЃРІРµС‚РєРё СЃРѕРѕР±С‰РµРЅРёСЏ yes/no Рё РІРѕР·РІСЂР°С‰Р°СЋС‰РµРµ Р·РЅР°С‡РµРЅРёСЏ 1/0
 bool PrintChoice(string* chiocearr, int size, int distance = 5, int X = 0, int Y = 0)
 {
 	int fmenupoint = 0;
@@ -1430,7 +1430,7 @@ bool PrintChoice(string* chiocearr, int size, int distance = 5, int X = 0, int Y
 	return 0;
 }
 
-// Меню OK содним вариантом действия
+// РњРµРЅСЋ OK СЃРѕРґРЅРёРј РІР°СЂРёР°РЅС‚РѕРј РґРµР№СЃС‚РІРёСЏ
 void Info_OK(Color color_1, Color color_2, int X = 0, int Y = 0)
 {
 	int fmenupoint = 0;
@@ -1449,8 +1449,8 @@ void Info_OK(Color color_1, Color color_2, int X = 0, int Y = 0)
 	} while (fkey != esc);
 }
 
-// Меню редактирования пользователя
-//функция подсветки сообщения create player/delete player/exit  и возвращающее значения 1 2 3
+// РњРµРЅСЋ СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёСЏ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
+//С„СѓРЅРєС†РёСЏ РїРѕРґСЃРІРµС‚РєРё СЃРѕРѕР±С‰РµРЅРёСЏ create player/delete player/exit  Рё РІРѕР·РІСЂР°С‰Р°СЋС‰РµРµ Р·РЅР°С‡РµРЅРёСЏ 1 2 3
 int PrintChoice(string* chiocearr, int size, Color color_1, Color color_2, int distance = 5, int X = 0, int Y = 0)
 {
 	int fmenupoint = 0;
@@ -1508,8 +1508,8 @@ int PrintChoice(string* chiocearr, int size, Color color_1, Color color_2, int d
 }
 
 
-// Меню выбора пользователя
-//функция подсвета пользователя и возвращающая номер слота
+// РњРµРЅСЋ РІС‹Р±РѕСЂР° РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
+//С„СѓРЅРєС†РёСЏ РїРѕРґСЃРІРµС‚Р° РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ Рё РІРѕР·РІСЂР°С‰Р°СЋС‰Р°СЏ РЅРѕРјРµСЂ СЃР»РѕС‚Р°
 int UserChoice(Gamers* GamersTable, int size, Color color_1, Color color_2, int Y = 21)//Y=26
 {
 	int fmenupoint = 0;
@@ -1569,7 +1569,7 @@ int UserChoice(Gamers* GamersTable, int size, Color color_1, Color color_2, int 
 	return -1;
 }
 
-//Функция проверки пароля
+//Р¤СѓРЅРєС†РёСЏ РїСЂРѕРІРµСЂРєРё РїР°СЂРѕР»СЏ
 bool PasswordCheck(Gamers* GamersTable, string pass, int slot_number)
 {
 	if (GamersTable[slot_number].password == pass)
@@ -1583,10 +1583,10 @@ bool PasswordCheck(Gamers* GamersTable, string pass, int slot_number)
 }
 
 //
-// Блок логики
+// Р‘Р»РѕРє Р»РѕРіРёРєРё
 // 
 
-//Обнуление строки карт
+//РћР±РЅСѓР»РµРЅРёРµ СЃС‚СЂРѕРєРё РєР°СЂС‚
 void NullCard(Koloda* Card, int i)
 {
 	Card[i].number = 0;
@@ -1595,7 +1595,7 @@ void NullCard(Koloda* Card, int i)
 	Card[i].trump = false;
 }
 
-//Обнуление пула карт
+//РћР±РЅСѓР»РµРЅРёРµ РїСѓР»Р° РєР°СЂС‚
 void NullPoolCards(Koloda* Pool, int number_cards)
 {
 	for (size_t i = 0; i < number_cards; i++)
@@ -1604,7 +1604,7 @@ void NullPoolCards(Koloda* Pool, int number_cards)
 	}
 }
 
-// Обзывание карт
+// РћР±Р·С‹РІР°РЅРёРµ РєР°СЂС‚
 void CardName(Koloda& Card, int card_number, char suit)
 {
 	//if (Card.number == 0)
@@ -1662,58 +1662,58 @@ void CardName(Koloda& Card, int card_number, char suit)
 
 	if (Card.number == 0)
 	{
-		Card.name = RUCIN("ШЕСТЬ");
+		Card.name = RUCIN("РЁР•РЎРўР¬");
 	}
 	if (Card.number == 1)
 	{
-		Card.name = RUCIN("СЕМЬ");
+		Card.name = RUCIN("РЎР•РњР¬");
 	}
 	if (Card.number == 2)
 	{
-		Card.name = RUCIN("ВОСЕМЬ");
+		Card.name = RUCIN("Р’РћРЎР•РњР¬");
 	}
 	if (Card.number == 3)
 	{
-		Card.name = RUCIN("ДЕВЯТЬ");
+		Card.name = RUCIN("Р”Р•Р’РЇРўР¬");
 	}
 	if (Card.number == 4)
 	{
-		Card.name = RUCIN("ДЕСЯТЬ");
+		Card.name = RUCIN("Р”Р•РЎРЇРўР¬");
 	}
 	if (Card.number == 5)
 	{
-		Card.name = RUCIN("ВАЛЕТ");
+		Card.name = RUCIN("Р’РђР›Р•Рў");
 	}
 	if (Card.number == 6)
 	{
-		Card.name = RUCIN("ДАМА");
+		Card.name = RUCIN("Р”РђРњРђ");
 	}
 	if (Card.number == 7)
 	{
-		Card.name = RUCIN("КОРОЛЬ");
+		Card.name = RUCIN("РљРћР РћР›Р¬");
 	}
 	if (Card.number == 8)
 	{
-		Card.name = RUCIN("ТУЗ");
+		Card.name = RUCIN("РўРЈР—");
 	}
 	if (suit == (char)3)
 	{
-		Card.name += RUCIN(" ЧЕРВЕЙ");
+		Card.name += RUCIN(" Р§Р•Р Р’Р•Р™");
 	}
 	if (suit == (char)4)
 	{
-		Card.name += RUCIN(" БУБЕЙ");
+		Card.name += RUCIN(" Р‘РЈР‘Р•Р™");
 	}
 	if (suit == (char)5)
 	{
-		Card.name += RUCIN(" КРЕСТЕЙ");
+		Card.name += RUCIN(" РљР Р•РЎРўР•Р™");
 	}
 	if (suit == (char)6)
 	{
-		Card.name += RUCIN(" ПИКЕЙ");
+		Card.name += RUCIN(" РџРРљР•Р™");
 	}
 }
-//Генерация колоды карт
+//Р“РµРЅРµСЂР°С†РёСЏ РєРѕР»РѕРґС‹ РєР°СЂС‚
 void KolodaGenerator(Koloda* Cards, int suit, int card_number, int card_nominal)
 {
 
@@ -1721,7 +1721,7 @@ void KolodaGenerator(Koloda* Cards, int suit, int card_number, int card_nominal)
 	{
 		for (size_t i = 0; i < card_number; i++)
 		{
-			//Черви
+			//Р§РµСЂРІРё
 			if (i >= 0 and i < 9)
 			{
 
@@ -1731,7 +1731,7 @@ void KolodaGenerator(Koloda* Cards, int suit, int card_number, int card_nominal)
 				CardName(Cards[i], i, 3);
 
 			}
-			//Буби
+			//Р‘СѓР±Рё
 			if (i >= 9 and i < 18)
 			{
 
@@ -1741,7 +1741,7 @@ void KolodaGenerator(Koloda* Cards, int suit, int card_number, int card_nominal)
 				CardName(Cards[i], i, 4);
 
 			}
-			//Крести
+			//РљСЂРµСЃС‚Рё
 			if (i >= 18 and i < 27)
 			{
 
@@ -1750,7 +1750,7 @@ void KolodaGenerator(Koloda* Cards, int suit, int card_number, int card_nominal)
 				Cards[i].trump = false;
 				CardName(Cards[i], i, 5);
 			}
-			//Пики
+			//РџРёРєРё
 			if (i >= 27 and i < 36)
 			{
 				Cards[i].number = i - card_nominal * 3;
@@ -1762,7 +1762,7 @@ void KolodaGenerator(Koloda* Cards, int suit, int card_number, int card_nominal)
 	}
 }
 
-//Перетасовывание карт в колоде
+//РџРµСЂРµС‚Р°СЃРѕРІС‹РІР°РЅРёРµ РєР°СЂС‚ РІ РєРѕР»РѕРґРµ
 void KolodaMix(Koloda* cards, int card_number, int mix_rounds)
 {
 	for (size_t i = 0; i < mix_rounds; i++)
@@ -1771,7 +1771,7 @@ void KolodaMix(Koloda* cards, int card_number, int mix_rounds)
 	}
 }
 
-//Объявление козырей
+//РћР±СЉСЏРІР»РµРЅРёРµ РєРѕР·С‹СЂРµР№
 void Trump_13(Koloda* Cards, int trump_card = 12, int card_number = 36)
 {
 
@@ -1782,13 +1782,13 @@ void Trump_13(Koloda* Cards, int trump_card = 12, int card_number = 36)
 			Cards[i].trump = true;
 			//Cards[i].name.insert(0, "TRUMP ");
 
-			Cards[i].name.insert(0, RUCIN("КОЗЫРЬ "));
+			Cards[i].name.insert(0, RUCIN("РљРћР—Р«Р Р¬ "));
 		}
 	}
 
 }
 
-// Функция раздачи карт боту и игроку
+// Р¤СѓРЅРєС†РёСЏ СЂР°Р·РґР°С‡Рё РєР°СЂС‚ Р±РѕС‚Сѓ Рё РёРіСЂРѕРєСѓ
 void RazdachaCards(Koloda* Cards, Koloda* Player_cards, Koloda* Bot_cards, int card_number, int player_pool_card_number)
 {
 	int jp = 0;
@@ -1810,13 +1810,13 @@ void RazdachaCards(Koloda* Cards, Koloda* Player_cards, Koloda* Bot_cards, int c
 	}
 }
 
-// Перемещение объявленного козыря в конец колоды
+// РџРµСЂРµРјРµС‰РµРЅРёРµ РѕР±СЉСЏРІР»РµРЅРЅРѕРіРѕ РєРѕР·С‹СЂСЏ РІ РєРѕРЅРµС† РєРѕР»РѕРґС‹
 void SwapTrump(Koloda* Cards, int trump_number, int last_card_number)
 {
 	swap(Cards[trump_number], Cards[last_card_number]);
 }
 
-//Функция определения первого хода - возвращает 10+номинал карты если первым ходит игрок, 20+номинал карты - если ходит бот
+//Р¤СѓРЅРєС†РёСЏ РѕРїСЂРµРґРµР»РµРЅРёСЏ РїРµСЂРІРѕРіРѕ С…РѕРґР° - РІРѕР·РІСЂР°С‰Р°РµС‚ 10+РЅРѕРјРёРЅР°Р» РєР°СЂС‚С‹ РµСЃР»Рё РїРµСЂРІС‹Рј С…РѕРґРёС‚ РёРіСЂРѕРє, 20+РЅРѕРјРёРЅР°Р» РєР°СЂС‚С‹ - РµСЃР»Рё С…РѕРґРёС‚ Р±РѕС‚
 int First_move(Koloda* Player_cards, Koloda* Bot_cards, int cards_per_player)
 {
 	int player_trump_pow = 9;
@@ -1835,19 +1835,19 @@ int First_move(Koloda* Player_cards, Koloda* Bot_cards, int cards_per_player)
 		}
 	}
 
-	//Первым ходит игрок
+	//РџРµСЂРІС‹Рј С…РѕРґРёС‚ РёРіСЂРѕРє
 	if (player_trump_pow < bot_trump_pow)
 	{
 		return 10 + player_trump_pow;
 	}
-	//Первым ходит бот
+	//РџРµСЂРІС‹Рј С…РѕРґРёС‚ Р±РѕС‚
 	else
 	{
 		return 20 + bot_trump_pow;
 	}
 }
 
-//Функция счетчика остатка карт в колоде
+//Р¤СѓРЅРєС†РёСЏ СЃС‡РµС‚С‡РёРєР° РѕСЃС‚Р°С‚РєР° РєР°СЂС‚ РІ РєРѕР»РѕРґРµ
 int Cards_in_deck(Koloda* Cards, int number_cards = 36)
 {
 
@@ -1862,7 +1862,7 @@ int Cards_in_deck(Koloda* Cards, int number_cards = 36)
 	return count;
 }
 
-// Функция сортировки пустых слотов руки
+// Р¤СѓРЅРєС†РёСЏ СЃРѕСЂС‚РёСЂРѕРІРєРё РїСѓСЃС‚С‹С… СЃР»РѕС‚РѕРІ СЂСѓРєРё
 void Sort_Pool_Cards(Koloda* Cards, int number_cards)
 {
 	for (size_t i = 0; i < number_cards - 1; i++)
@@ -1874,7 +1874,7 @@ void Sort_Pool_Cards(Koloda* Cards, int number_cards)
 	}
 }
 
-//Функция выбора карты, возвращает номер карты в руке игрока, визуально стирает выбранную карту, если нажато esc возвращает -1
+//Р¤СѓРЅРєС†РёСЏ РІС‹Р±РѕСЂР° РєР°СЂС‚С‹, РІРѕР·РІСЂР°С‰Р°РµС‚ РЅРѕРјРµСЂ РєР°СЂС‚С‹ РІ СЂСѓРєРµ РёРіСЂРѕРєР°, РІРёР·СѓР°Р»СЊРЅРѕ СЃС‚РёСЂР°РµС‚ РІС‹Р±СЂР°РЅРЅСѓСЋ РєР°СЂС‚Сѓ, РµСЃР»Рё РЅР°Р¶Р°С‚Рѕ esc РІРѕР·РІСЂР°С‰Р°РµС‚ -1
 int Chioce_Player_Card(Koloda* Player_cards, char** card_ico, char **fone, int X, int Y, int step, int def_step = 11)
 {
 	int i = 0;
@@ -1886,7 +1886,7 @@ int Chioce_Player_Card(Koloda* Player_cards, char** card_ico, char **fone, int X
 	do
 	{
 
-		// Отрисовка карты - отрисовывает первую карту сверху, затирает эту же карту снизу
+		// РћС‚СЂРёСЃРѕРІРєР° РєР°СЂС‚С‹ - РѕС‚СЂРёСЃРѕРІС‹РІР°РµС‚ РїРµСЂРІСѓСЋ РєР°СЂС‚Сѓ СЃРІРµСЂС…Сѓ, Р·Р°С‚РёСЂР°РµС‚ СЌС‚Сѓ Р¶Рµ РєР°СЂС‚Сѓ СЃРЅРёР·Сѓ
 		Y = 49;
 		PrintCard(Player_cards[i], card_ico, X + f_step, Y, 9, 9, (Color)Green, (Color)Green, true);
 		Y = 39;
@@ -1896,7 +1896,7 @@ int Chioce_Player_Card(Koloda* Player_cards, char** card_ico, char **fone, int X
 		{
 			i++;
 			f_step += step;
-			//Перенос в начало
+			//РџРµСЂРµРЅРѕСЃ РІ РЅР°С‡Р°Р»Рѕ
 			if (i == number_card_in_deck)
 			{
 				PrintCard(Player_cards[i - 1], card_ico, X + f_step - step, Y, 9, 9, (Color)Green, (Color)Green, true);
@@ -1906,9 +1906,9 @@ int Chioce_Player_Card(Koloda* Player_cards, char** card_ico, char **fone, int X
 				sdvig = 0;
 				temp_step = 0;
 			}
-			//Отрисовывается карта, которая была на позиции i-1 снизу
+			//РћС‚СЂРёСЃРѕРІС‹РІР°РµС‚СЃСЏ РєР°СЂС‚Р°, РєРѕС‚РѕСЂР°СЏ Р±С‹Р»Р° РЅР° РїРѕР·РёС†РёРё i-1 СЃРЅРёР·Сѓ
 			PrintCard(Player_cards[i], card_ico, X + f_step - temp_step, Y, 9, 9, (Color)Green, (Color)Green, true);
-			//Затирается карта, которая была на позиции i-1 сверх
+			//Р—Р°С‚РёСЂР°РµС‚СЃСЏ РєР°СЂС‚Р°, РєРѕС‚РѕСЂР°СЏ Р±С‹Р»Р° РЅР° РїРѕР·РёС†РёРё i-1 СЃРІРµСЂС…
 			PrintCard(Player_cards[i - sdvig], card_ico, X + f_step - temp_step, Y + 10, 9, 9, (Color)Green, (Color)Green, false);
 			sdvig = 1;
 			temp_step = step;
@@ -1917,7 +1917,7 @@ int Chioce_Player_Card(Koloda* Player_cards, char** card_ico, char **fone, int X
 		{
 			i--;
 			f_step -= step;
-			//Перенос в конец
+			//РџРµСЂРµРЅРѕСЃ РІ РєРѕРЅРµС†
 			if (i == -1)
 			{
 				PrintCard(Player_cards[i + 1], card_ico, X + f_step + step, Y, 9, 9, (Color)Green, (Color)Green, true);
@@ -1941,7 +1941,7 @@ int Chioce_Player_Card(Koloda* Player_cards, char** card_ico, char **fone, int X
 	return i;
 }
 
-//Функция заполнения пула карт по передаваемой карте
+//Р¤СѓРЅРєС†РёСЏ Р·Р°РїРѕР»РЅРµРЅРёСЏ РїСѓР»Р° РєР°СЂС‚ РїРѕ РїРµСЂРµРґР°РІР°РµРјРѕР№ РєР°СЂС‚Рµ
 void Fill_Pool_Cards(Koloda* Input_Pool_Cards, Koloda* Output_Pool_Cards, int number_cards, int card_i)
 {
 	for (size_t i = 0; i < number_cards; i++)
@@ -1954,7 +1954,7 @@ void Fill_Pool_Cards(Koloda* Input_Pool_Cards, Koloda* Output_Pool_Cards, int nu
 	}
 }
 
-//Функция ответа игрока на карту бота Если карта которой пытается отбиться игрок больше по номиналу  и/или козырь возвращается 1, если отбиться картой с пришедшим индексом нельзя возвращается 0
+//Р¤СѓРЅРєС†РёСЏ РѕС‚РІРµС‚Р° РёРіСЂРѕРєР° РЅР° РєР°СЂС‚Сѓ Р±РѕС‚Р° Р•СЃР»Рё РєР°СЂС‚Р° РєРѕС‚РѕСЂРѕР№ РїС‹С‚Р°РµС‚СЃСЏ РѕС‚Р±РёС‚СЊСЃСЏ РёРіСЂРѕРє Р±РѕР»СЊС€Рµ РїРѕ РЅРѕРјРёРЅР°Р»Сѓ  Рё/РёР»Рё РєРѕР·С‹СЂСЊ РІРѕР·РІСЂР°С‰Р°РµС‚СЃСЏ 1, РµСЃР»Рё РѕС‚Р±РёС‚СЊСЃСЏ РєР°СЂС‚РѕР№ СЃ РїСЂРёС€РµРґС€РёРј РёРЅРґРµРєСЃРѕРј РЅРµР»СЊР·СЏ РІРѕР·РІСЂР°С‰Р°РµС‚СЃСЏ 0
 int Player_Answer(Koloda* Player_cards, Koloda* Battlefield, int player_card_index)
 {
 	int i = 0;
@@ -1964,10 +1964,10 @@ int Player_Answer(Koloda* Player_cards, Koloda* Battlefield, int player_card_ind
 	int temp_nominal_card = 9;
 	for (size_t i = 0; i < number_cards_on_deck; i++)
 	{
-		//Если карта на поле подкинута ботом для отбивания
+		//Р•СЃР»Рё РєР°СЂС‚Р° РЅР° РїРѕР»Рµ РїРѕРґРєРёРЅСѓС‚Р° Р±РѕС‚РѕРј РґР»СЏ РѕС‚Р±РёРІР°РЅРёСЏ
 		if (i % 2 == 0 and i + 1 == number_cards_on_deck)
 		{
-			//Карта, подброшенная ботом - козырь
+			//РљР°СЂС‚Р°, РїРѕРґР±СЂРѕС€РµРЅРЅР°СЏ Р±РѕС‚РѕРј - РєРѕР·С‹СЂСЊ
 			if (Battlefield[i].trump)
 			{
 				if (Player_cards[player_card_index].number > Battlefield[i].number and Player_cards[player_card_index].trump)
@@ -1979,7 +1979,7 @@ int Player_Answer(Koloda* Player_cards, Koloda* Battlefield, int player_card_ind
 					return 0;
 				}
 			}
-			// Карта, подброшенная ботом не козырь
+			// РљР°СЂС‚Р°, РїРѕРґР±СЂРѕС€РµРЅРЅР°СЏ Р±РѕС‚РѕРј РЅРµ РєРѕР·С‹СЂСЊ
 			else
 			{
 				if (Player_cards[player_card_index].trump)
@@ -1999,7 +1999,7 @@ int Player_Answer(Koloda* Player_cards, Koloda* Battlefield, int player_card_ind
 	}
 }
 
-//Функция ответа бота на карту игрока
+//Р¤СѓРЅРєС†РёСЏ РѕС‚РІРµС‚Р° Р±РѕС‚Р° РЅР° РєР°СЂС‚Сѓ РёРіСЂРѕРєР°
 int Bot_Answer_Level_0(Koloda* Bot_cards, Koloda* Battlefield)
 {
 	int i = 0;
@@ -2011,10 +2011,10 @@ int Bot_Answer_Level_0(Koloda* Bot_cards, Koloda* Battlefield)
 
 	for (size_t i = 0; i < number_cards_on_deck; i++)
 	{
-		//Если карта на поле подкинута игроком для отбивания
+		//Р•СЃР»Рё РєР°СЂС‚Р° РЅР° РїРѕР»Рµ РїРѕРґРєРёРЅСѓС‚Р° РёРіСЂРѕРєРѕРј РґР»СЏ РѕС‚Р±РёРІР°РЅРёСЏ
 		if (i % 2 == 0 and i + 1 == number_cards_on_deck)
 		{
-			// Если j-я карта руки бота одной и той-же масти с подкинутой картой и подкинутая карта НЕ КОЗЫРЬ!
+			// Р•СЃР»Рё j-СЏ РєР°СЂС‚Р° СЂСѓРєРё Р±РѕС‚Р° РѕРґРЅРѕР№ Рё С‚РѕР№-Р¶Рµ РјР°СЃС‚Рё СЃ РїРѕРґРєРёРЅСѓС‚РѕР№ РєР°СЂС‚РѕР№ Рё РїРѕРґРєРёРЅСѓС‚Р°СЏ РєР°СЂС‚Р° РќР• РљРћР—Р«Р Р¬!
 			for (size_t j = 0; j < number_cards_in_bot_hand; j++)
 			{
 				if (Bot_cards[j].suit == Battlefield[i].suit and Battlefield[i].trump == false)
@@ -2032,11 +2032,11 @@ int Bot_Answer_Level_0(Koloda* Bot_cards, Koloda* Battlefield)
 				return temp_k_card;
 			}
 
-			// Если подкинутая карта не козырь, но в руке бота нет масти для и/или соответствующего номинала чтобы ее крыть - ПРОВЕРКА НА ВОЗМОЖНОСТЬ ПОКРЫТЬ КАРТУ КОЗЫРЕМ
+			// Р•СЃР»Рё РїРѕРґРєРёРЅСѓС‚Р°СЏ РєР°СЂС‚Р° РЅРµ РєРѕР·С‹СЂСЊ, РЅРѕ РІ СЂСѓРєРµ Р±РѕС‚Р° РЅРµС‚ РјР°СЃС‚Рё РґР»СЏ Рё/РёР»Рё СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓСЋС‰РµРіРѕ РЅРѕРјРёРЅР°Р»Р° С‡С‚РѕР±С‹ РµРµ РєСЂС‹С‚СЊ - РџР РћР’Р•Р РљРђ РќРђ Р’РћР—РњРћР–РќРћРЎРўР¬ РџРћРљР Р«РўР¬ РљРђР РўРЈ РљРћР—Р«Р Р•Рњ
 			temp_nominal_card = 9;
 			for (size_t j = 0; j < number_cards_in_bot_hand; j++)
 			{
-				//Если в руке бота нет масти некозырной карты которую надо отбить - бот пытается отбиться козырем
+				//Р•СЃР»Рё РІ СЂСѓРєРµ Р±РѕС‚Р° РЅРµС‚ РјР°СЃС‚Рё РЅРµРєРѕР·С‹СЂРЅРѕР№ РєР°СЂС‚С‹ РєРѕС‚РѕСЂСѓСЋ РЅР°РґРѕ РѕС‚Р±РёС‚СЊ - Р±РѕС‚ РїС‹С‚Р°РµС‚СЃСЏ РѕС‚Р±РёС‚СЊСЃСЏ РєРѕР·С‹СЂРµРј
 				if (Battlefield[i].trump == false and Bot_cards[j].trump == true)
 				{
 					if (Bot_cards[j].number < temp_nominal_card)
@@ -2050,7 +2050,7 @@ int Bot_Answer_Level_0(Koloda* Bot_cards, Koloda* Battlefield)
 			{
 				return temp_k_card;
 			}
-			// Если подкинутая карта козырь. ПРОВЕРКА НА ВОЗМОЖНОСТЬ ОТБИТЬСЯ КОЗЫРЕМ
+			// Р•СЃР»Рё РїРѕРґРєРёРЅСѓС‚Р°СЏ РєР°СЂС‚Р° РєРѕР·С‹СЂСЊ. РџР РћР’Р•Р РљРђ РќРђ Р’РћР—РњРћР–РќРћРЎРўР¬ РћРўР‘РРўР¬РЎРЇ РљРћР—Р«Р Р•Рњ
 			temp_nominal_card = 9;
 			for (size_t j = 0; j < number_cards_in_bot_hand; j++)
 			{
@@ -2067,13 +2067,13 @@ int Bot_Answer_Level_0(Koloda* Bot_cards, Koloda* Battlefield)
 			{
 				return temp_k_card;
 			}
-			// Если бот не может побить подкинутую карту
+			// Р•СЃР»Рё Р±РѕС‚ РЅРµ РјРѕР¶РµС‚ РїРѕР±РёС‚СЊ РїРѕРґРєРёРЅСѓС‚СѓСЋ РєР°СЂС‚Сѓ
 			return -1;
 		}
 	}
 }
 
-//Функция ход бота turn_on - для проверки можно ли подбрасывать
+//Р¤СѓРЅРєС†РёСЏ С…РѕРґ Р±РѕС‚Р° turn_on - РґР»СЏ РїСЂРѕРІРµСЂРєРё РјРѕР¶РЅРѕ Р»Рё РїРѕРґР±СЂР°СЃС‹РІР°С‚СЊ
 int Bot_Turn_Level_0(Koloda* Bot_cards, Koloda* Battlefield, Koloda* Cards, bool turn_on)
 {
 	int min_nominal = 9;
@@ -2088,7 +2088,7 @@ int Bot_Turn_Level_0(Koloda* Bot_cards, Koloda* Battlefield, Koloda* Cards, bool
 		}
 	}
 
-	//Не ходит с козырей
+	//РќРµ С…РѕРґРёС‚ СЃ РєРѕР·С‹СЂРµР№
 	if (Cards_in_deck(Cards) > 0)
 	{
 		for (size_t i = 0; i < Cards_in_deck(Bot_cards); i++)
@@ -2109,13 +2109,13 @@ int Bot_Turn_Level_0(Koloda* Bot_cards, Koloda* Battlefield, Koloda* Cards, bool
 					}
 				}
 			}
-			//проверка подбрасывания
+			//РїСЂРѕРІРµСЂРєР° РїРѕРґР±СЂР°СЃС‹РІР°РЅРёСЏ
 			else
 			{
-				//Если карта не пустая и не козырь
+				//Р•СЃР»Рё РєР°СЂС‚Р° РЅРµ РїСѓСЃС‚Р°СЏ Рё РЅРµ РєРѕР·С‹СЂСЊ
 				if (Bot_cards[i].suit != 'Z' and Bot_cards[i].trump == false)
 				{
-					//Можно ли подбросить карту
+					//РњРѕР¶РЅРѕ Р»Рё РїРѕРґР±СЂРѕСЃРёС‚СЊ РєР°СЂС‚Сѓ
 					for (size_t j = 0; j < Cards_in_deck(Battlefield); j++)
 					{
 						if (Bot_cards[i].number == Battlefield[j].number)
@@ -2128,7 +2128,7 @@ int Bot_Turn_Level_0(Koloda* Bot_cards, Koloda* Battlefield, Koloda* Cards, bool
 
 		}
 	}
-	//Карты в колоде закончились Бот может ходить с козырей
+	//РљР°СЂС‚С‹ РІ РєРѕР»РѕРґРµ Р·Р°РєРѕРЅС‡РёР»РёСЃСЊ Р‘РѕС‚ РјРѕР¶РµС‚ С…РѕРґРёС‚СЊ СЃ РєРѕР·С‹СЂРµР№
 	else
 	{
 		for (size_t i = 0; i < Cards_in_deck(Bot_cards); i++)
@@ -2141,13 +2141,13 @@ int Bot_Turn_Level_0(Koloda* Bot_cards, Koloda* Battlefield, Koloda* Cards, bool
 					index = i;
 				}
 			}
-			//проверка подбрасывания с возможностью подбрасывания козырей
+			//РїСЂРѕРІРµСЂРєР° РїРѕРґР±СЂР°СЃС‹РІР°РЅРёСЏ СЃ РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊСЋ РїРѕРґР±СЂР°СЃС‹РІР°РЅРёСЏ РєРѕР·С‹СЂРµР№
 			else
 			{
-				//Если карта не пустая
+				//Р•СЃР»Рё РєР°СЂС‚Р° РЅРµ РїСѓСЃС‚Р°СЏ
 				if (Bot_cards[i].suit != 'Z')
 				{
-					//Можно ли подбросить карту
+					//РњРѕР¶РЅРѕ Р»Рё РїРѕРґР±СЂРѕСЃРёС‚СЊ РєР°СЂС‚Сѓ
 					for (size_t j = 0; j < Cards_in_deck(Battlefield); j++)
 					{
 						if (Bot_cards[i].number == Battlefield[j].number)
@@ -2162,7 +2162,7 @@ int Bot_Turn_Level_0(Koloda* Bot_cards, Koloda* Battlefield, Koloda* Cards, bool
 	return index;
 }
 
-//Функция определения начальной координаты карты и шага отрисовки. Возвращает код Пример - 8011 где 80 начальная координата, 11 шаг 
+//Р¤СѓРЅРєС†РёСЏ РѕРїСЂРµРґРµР»РµРЅРёСЏ РЅР°С‡Р°Р»СЊРЅРѕР№ РєРѕРѕСЂРґРёРЅР°С‚С‹ РєР°СЂС‚С‹ Рё С€Р°РіР° РѕС‚СЂРёСЃРѕРІРєРё. Р’РѕР·РІСЂР°С‰Р°РµС‚ РєРѕРґ РџСЂРёРјРµСЂ - 8011 РіРґРµ 80 РЅР°С‡Р°Р»СЊРЅР°СЏ РєРѕРѕСЂРґРёРЅР°С‚Р°, 11 С€Р°Рі 
 int X_Cards_Coordinat_and_Step(int number_cards, int X_step = 11, int width = 178, int width_card = 9)
 {
 	int start_X = (width - ((number_cards - 1) * X_step + width_card)) / 2;
@@ -2189,7 +2189,7 @@ int X_Cards_Coordinat_and_Step(int number_cards, int X_step = 11, int width = 17
 	return (start_X * 100 + X_step);
 }
 
-//Функция проверки возможности хода (Если на столе нет карт - возвращает 1, если на столе есть карты, проверяет есть ли соответствующий номинал в руке игрока. Если есть - возвращает 1, если нет возвращает 0)
+//Р¤СѓРЅРєС†РёСЏ РїСЂРѕРІРµСЂРєРё РІРѕР·РјРѕР¶РЅРѕСЃС‚Рё С…РѕРґР° (Р•СЃР»Рё РЅР° СЃС‚РѕР»Рµ РЅРµС‚ РєР°СЂС‚ - РІРѕР·РІСЂР°С‰Р°РµС‚ 1, РµСЃР»Рё РЅР° СЃС‚РѕР»Рµ РµСЃС‚СЊ РєР°СЂС‚С‹, РїСЂРѕРІРµСЂСЏРµС‚ РµСЃС‚СЊ Р»Рё СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓСЋС‰РёР№ РЅРѕРјРёРЅР°Р» РІ СЂСѓРєРµ РёРіСЂРѕРєР°. Р•СЃР»Рё РµСЃС‚СЊ - РІРѕР·РІСЂР°С‰Р°РµС‚ 1, РµСЃР»Рё РЅРµС‚ РІРѕР·РІСЂР°С‰Р°РµС‚ 0)
 int Test_Player_turn_on(Koloda* Battlefield, Koloda* Current_Player_cards, int number_cards = 36)
 {
 	if (Cards_in_deck(Battlefield) == 0)
@@ -2215,7 +2215,7 @@ int Test_Player_turn_on(Koloda* Battlefield, Koloda* Current_Player_cards, int n
 	return 0;
 }
 
-//Функция БИТО Передает карты со стола в отбой, возвращает 1 - ход игрока или 0 - ход бота НЕ ОТРИСОВЫВАЕТ НИЧЕГО!
+//Р¤СѓРЅРєС†РёСЏ Р‘РРўРћ РџРµСЂРµРґР°РµС‚ РєР°СЂС‚С‹ СЃРѕ СЃС‚РѕР»Р° РІ РѕС‚Р±РѕР№, РІРѕР·РІСЂР°С‰Р°РµС‚ 1 - С…РѕРґ РёРіСЂРѕРєР° РёР»Рё 0 - С…РѕРґ Р±РѕС‚Р° РќР• РћРўР РРЎРћР’Р«Р’РђР•Рў РќРР§Р•Р“Рћ!
 int bito(Koloda* Battlefield, Koloda* Played_cards, bool player_turn, int number_cards = 36)
 {
 	for (size_t i = 0; i < Cards_in_deck(Battlefield); i++)
@@ -2226,7 +2226,7 @@ int bito(Koloda* Battlefield, Koloda* Played_cards, bool player_turn, int number
 	return !player_turn;
 }
 
-//Функция отрисовки отбоя
+//Р¤СѓРЅРєС†РёСЏ РѕС‚СЂРёСЃРѕРІРєРё РѕС‚Р±РѕСЏ
 void Print_Played_Card(Koloda* Played_Cards, char** card_ico, int n = 2)
 {
 	int numbercards = 1;
@@ -2241,7 +2241,7 @@ void Print_Played_Card(Koloda* Played_Cards, char** card_ico, int n = 2)
 	}
 }
 
-// Функция добора карт. Если в колоде добора есть карты, передает карты из колоды добора в руки игроков если карт в руке < 6 Первым осуществляет добор тот игрок который ходил. Реализовать - Если у обоих игроков количество карт равно 0, отбивавшийся игрок берет последнюю карту из добора 
+// Р¤СѓРЅРєС†РёСЏ РґРѕР±РѕСЂР° РєР°СЂС‚. Р•СЃР»Рё РІ РєРѕР»РѕРґРµ РґРѕР±РѕСЂР° РµСЃС‚СЊ РєР°СЂС‚С‹, РїРµСЂРµРґР°РµС‚ РєР°СЂС‚С‹ РёР· РєРѕР»РѕРґС‹ РґРѕР±РѕСЂР° РІ СЂСѓРєРё РёРіСЂРѕРєРѕРІ РµСЃР»Рё РєР°СЂС‚ РІ СЂСѓРєРµ < 6 РџРµСЂРІС‹Рј РѕСЃСѓС‰РµСЃС‚РІР»СЏРµС‚ РґРѕР±РѕСЂ С‚РѕС‚ РёРіСЂРѕРє РєРѕС‚РѕСЂС‹Р№ С…РѕРґРёР». Р РµР°Р»РёР·РѕРІР°С‚СЊ - Р•СЃР»Рё Сѓ РѕР±РѕРёС… РёРіСЂРѕРєРѕРІ РєРѕР»РёС‡РµСЃС‚РІРѕ РєР°СЂС‚ СЂР°РІРЅРѕ 0, РѕС‚Р±РёРІР°РІС€РёР№СЃСЏ РёРіСЂРѕРє Р±РµСЂРµС‚ РїРѕСЃР»РµРґРЅСЋСЋ РєР°СЂС‚Сѓ РёР· РґРѕР±РѕСЂР° 
 void Dobor(Koloda* Cards, Koloda* Player_cards, Koloda* Bot_cards, bool pt, int cards_per_player = 6, int number_cards = 36)
 {
 	int card_to_take;
@@ -2258,10 +2258,10 @@ void Dobor(Koloda* Cards, Koloda* Player_cards, Koloda* Bot_cards, bool pt, int 
 
 	if (Cards_in_deck(Cards) > 0)
 	{
-		// Пока все не набрали карты
+		// РџРѕРєР° РІСЃРµ РЅРµ РЅР°Р±СЂР°Р»Рё РєР°СЂС‚С‹
 		do
 		{
-			// Определение iй карты с которой надо начинать прилепливать карты из колоды
+			// РћРїСЂРµРґРµР»РµРЅРёРµ iР№ РєР°СЂС‚С‹ СЃ РєРѕС‚РѕСЂРѕР№ РЅР°РґРѕ РЅР°С‡РёРЅР°С‚СЊ РїСЂРёР»РµРїР»РёРІР°С‚СЊ РєР°СЂС‚С‹ РёР· РєРѕР»РѕРґС‹
 			for (size_t i = 0; i < number_cards; i++)
 			{
 				if (Player_cards[i].suit == 'Z')
@@ -2278,10 +2278,10 @@ void Dobor(Koloda* Cards, Koloda* Player_cards, Koloda* Bot_cards, bool pt, int 
 					break;
 				}
 			}
-			// Добор карт игроком
+			// Р”РѕР±РѕСЂ РєР°СЂС‚ РёРіСЂРѕРєРѕРј
 			if (pt)
 			{
-				//Нахождение индекса первой непустой карты
+				//РќР°С…РѕР¶РґРµРЅРёРµ РёРЅРґРµРєСЃР° РїРµСЂРІРѕР№ РЅРµРїСѓСЃС‚РѕР№ РєР°СЂС‚С‹
 				for (size_t i = 0; i < number_cards; i++)
 				{
 					if (Cards[i].suit != 'Z')
@@ -2290,25 +2290,25 @@ void Dobor(Koloda* Cards, Koloda* Player_cards, Koloda* Bot_cards, bool pt, int 
 						break;
 					}
 				}
-				// Проверка добора
+				// РџСЂРѕРІРµСЂРєР° РґРѕР±РѕСЂР°
 				if (Cards_in_deck(Player_cards) < cards_per_player)
 				{
-					// Если количество карт в колоде больше суммарно необходимого игорокам - игроки берут карт столько сколько нужно
+					// Р•СЃР»Рё РєРѕР»РёС‡РµСЃС‚РІРѕ РєР°СЂС‚ РІ РєРѕР»РѕРґРµ Р±РѕР»СЊС€Рµ СЃСѓРјРјР°СЂРЅРѕ РЅРµРѕР±С…РѕРґРёРјРѕРіРѕ РёРіРѕСЂРѕРєР°Рј - РёРіСЂРѕРєРё Р±РµСЂСѓС‚ РєР°СЂС‚ СЃС‚РѕР»СЊРєРѕ СЃРєРѕР»СЊРєРѕ РЅСѓР¶РЅРѕ
 					if (Cards_in_deck(Cards) >= (cards_need_player + cards_need_bot))
 					{
 						card_to_take = cards_per_player - Cards_in_deck(Player_cards);
 						take = false;
 					}
-					// В колоде карт меньше, чем нужно игрокам И игроку и боту нужно добрать карты - количество карт в колоде делится на 2 +1 вслучае если нечтное количество карт осталось в колоде /2 - если четное
+					// Р’ РєРѕР»РѕРґРµ РєР°СЂС‚ РјРµРЅСЊС€Рµ, С‡РµРј РЅСѓР¶РЅРѕ РёРіСЂРѕРєР°Рј Р РёРіСЂРѕРєСѓ Рё Р±РѕС‚Сѓ РЅСѓР¶РЅРѕ РґРѕР±СЂР°С‚СЊ РєР°СЂС‚С‹ - РєРѕР»РёС‡РµСЃС‚РІРѕ РєР°СЂС‚ РІ РєРѕР»РѕРґРµ РґРµР»РёС‚СЃСЏ РЅР° 2 +1 РІСЃР»СѓС‡Р°Рµ РµСЃР»Рё РЅРµС‡С‚РЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ РєР°СЂС‚ РѕСЃС‚Р°Р»РѕСЃСЊ РІ РєРѕР»РѕРґРµ /2 - РµСЃР»Рё С‡РµС‚РЅРѕРµ
 					else if (Cards_in_deck(Cards) < (cards_need_player + cards_need_bot))
 					{
-						// Если количество карт оставшихся в колоде нечетное
+						// Р•СЃР»Рё РєРѕР»РёС‡РµСЃС‚РІРѕ РєР°СЂС‚ РѕСЃС‚Р°РІС€РёС…СЃСЏ РІ РєРѕР»РѕРґРµ РЅРµС‡РµС‚РЅРѕРµ
 						if (take and Cards_in_deck(Cards) % 2 != 0)
 						{
 							(card_to_take = Cards_in_deck(Cards) / 2) + 1;
 							take = false;
 						}
-						// Если количество карт в колоде четное
+						// Р•СЃР»Рё РєРѕР»РёС‡РµСЃС‚РІРѕ РєР°СЂС‚ РІ РєРѕР»РѕРґРµ С‡РµС‚РЅРѕРµ
 						else if (take and Cards_in_deck(Cards) % 2 == 0)
 						{
 							card_to_take = Cards_in_deck(Cards) / 2;
@@ -2319,7 +2319,7 @@ void Dobor(Koloda* Cards, Koloda* Player_cards, Koloda* Bot_cards, bool pt, int 
 							card_to_take = Cards_in_deck(Cards);
 						}
 					}
-					//Если в колоде карт больше или равно количеству карт, которые требуется добрать
+					//Р•СЃР»Рё РІ РєРѕР»РѕРґРµ РєР°СЂС‚ Р±РѕР»СЊС€Рµ РёР»Рё СЂР°РІРЅРѕ РєРѕР»РёС‡РµСЃС‚РІСѓ РєР°СЂС‚, РєРѕС‚РѕСЂС‹Рµ С‚СЂРµР±СѓРµС‚СЃСЏ РґРѕР±СЂР°С‚СЊ
 					if (card_to_take <= Cards_in_deck(Cards))
 					{
 						for (size_t i = 0; i < card_to_take; i++)
@@ -2328,7 +2328,7 @@ void Dobor(Koloda* Cards, Koloda* Player_cards, Koloda* Bot_cards, bool pt, int 
 							NullCard(Cards, i + i_card);
 						}
 					}
-					// Если в колоде карт недостаточно
+					// Р•СЃР»Рё РІ РєРѕР»РѕРґРµ РєР°СЂС‚ РЅРµРґРѕСЃС‚Р°С‚РѕС‡РЅРѕ
 					else
 					{
 						temp_cart = Cards_in_deck(Cards);
@@ -2346,10 +2346,10 @@ void Dobor(Koloda* Cards, Koloda* Player_cards, Koloda* Bot_cards, bool pt, int 
 				count++;
 				pt = false;
 			}
-			// Добор карт ботом
+			// Р”РѕР±РѕСЂ РєР°СЂС‚ Р±РѕС‚РѕРј
 			if (!pt and count < 2)
 			{
-				//Нахождение индекса первой непустой карты
+				//РќР°С…РѕР¶РґРµРЅРёРµ РёРЅРґРµРєСЃР° РїРµСЂРІРѕР№ РЅРµРїСѓСЃС‚РѕР№ РєР°СЂС‚С‹
 				for (size_t i = 0; i < number_cards; i++)
 				{
 					if (Cards[i].suit != 'Z')
@@ -2358,25 +2358,25 @@ void Dobor(Koloda* Cards, Koloda* Player_cards, Koloda* Bot_cards, bool pt, int 
 						break;
 					}
 				}
-				// Проверка добора
+				// РџСЂРѕРІРµСЂРєР° РґРѕР±РѕСЂР°
 				if (Cards_in_deck(Bot_cards) < cards_per_player)
 				{
-					// Если количество карт в колоде больше суммарно необходимого игорокам - игроки берут карт столько сколько нужно
+					// Р•СЃР»Рё РєРѕР»РёС‡РµСЃС‚РІРѕ РєР°СЂС‚ РІ РєРѕР»РѕРґРµ Р±РѕР»СЊС€Рµ СЃСѓРјРјР°СЂРЅРѕ РЅРµРѕР±С…РѕРґРёРјРѕРіРѕ РёРіРѕСЂРѕРєР°Рј - РёРіСЂРѕРєРё Р±РµСЂСѓС‚ РєР°СЂС‚ СЃС‚РѕР»СЊРєРѕ СЃРєРѕР»СЊРєРѕ РЅСѓР¶РЅРѕ
 					if (Cards_in_deck(Cards) >= (cards_need_player + cards_need_bot))
 					{
 						card_to_take = cards_per_player - Cards_in_deck(Bot_cards);
 						take = false;
 					}
-					// В колоде карт меньше, чем нужно игрокам И игроку и боту нужно добрать карты - количество карт в колоде делится на 2 +1 вслучае если нечтное количество карт осталось в колоде /2 - если четное
+					// Р’ РєРѕР»РѕРґРµ РєР°СЂС‚ РјРµРЅСЊС€Рµ, С‡РµРј РЅСѓР¶РЅРѕ РёРіСЂРѕРєР°Рј Р РёРіСЂРѕРєСѓ Рё Р±РѕС‚Сѓ РЅСѓР¶РЅРѕ РґРѕР±СЂР°С‚СЊ РєР°СЂС‚С‹ - РєРѕР»РёС‡РµСЃС‚РІРѕ РєР°СЂС‚ РІ РєРѕР»РѕРґРµ РґРµР»РёС‚СЃСЏ РЅР° 2 +1 РІСЃР»СѓС‡Р°Рµ РµСЃР»Рё РЅРµС‡С‚РЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ РєР°СЂС‚ РѕСЃС‚Р°Р»РѕСЃСЊ РІ РєРѕР»РѕРґРµ /2 - РµСЃР»Рё С‡РµС‚РЅРѕРµ
 					else if (Cards_in_deck(Cards) < (cards_need_player + cards_need_bot))
 					{
-						// Если количество карт оставшихся в колоде нечетное
+						// Р•СЃР»Рё РєРѕР»РёС‡РµСЃС‚РІРѕ РєР°СЂС‚ РѕСЃС‚Р°РІС€РёС…СЃСЏ РІ РєРѕР»РѕРґРµ РЅРµС‡РµС‚РЅРѕРµ
 						if (take and Cards_in_deck(Cards) % 2 != 0)
 						{
 							(card_to_take = Cards_in_deck(Cards) / 2) + 1;
 							take = false;
 						}
-						// Если количество карт в колоде четное
+						// Р•СЃР»Рё РєРѕР»РёС‡РµСЃС‚РІРѕ РєР°СЂС‚ РІ РєРѕР»РѕРґРµ С‡РµС‚РЅРѕРµ
 						else if (take and Cards_in_deck(Cards) % 2 == 0)
 						{
 							card_to_take = Cards_in_deck(Cards) / 2;
@@ -2388,7 +2388,7 @@ void Dobor(Koloda* Cards, Koloda* Player_cards, Koloda* Bot_cards, bool pt, int 
 						}
 					}
 
-					//Если в колоде карт больше или равно количеству карт, которые требуется добрать
+					//Р•СЃР»Рё РІ РєРѕР»РѕРґРµ РєР°СЂС‚ Р±РѕР»СЊС€Рµ РёР»Рё СЂР°РІРЅРѕ РєРѕР»РёС‡РµСЃС‚РІСѓ РєР°СЂС‚, РєРѕС‚РѕСЂС‹Рµ С‚СЂРµР±СѓРµС‚СЃСЏ РґРѕР±СЂР°С‚СЊ
 					if (card_to_take <= Cards_in_deck(Cards))
 					{
 						for (size_t i = 0; i < card_to_take; i++)
@@ -2397,7 +2397,7 @@ void Dobor(Koloda* Cards, Koloda* Player_cards, Koloda* Bot_cards, bool pt, int 
 							NullCard(Cards, i + i_card);
 						}
 					}
-					// Если в колоде карт недостаточно
+					// Р•СЃР»Рё РІ РєРѕР»РѕРґРµ РєР°СЂС‚ РЅРµРґРѕСЃС‚Р°С‚РѕС‡РЅРѕ
 					else
 					{
 						temp_cart = Cards_in_deck(Cards);
@@ -2419,18 +2419,18 @@ void Dobor(Koloda* Cards, Koloda* Player_cards, Koloda* Bot_cards, bool pt, int 
 	}
 }
 
-// Фннкция записи номиналов карт с кона(battlefield)
+// Р¤РЅРЅРєС†РёСЏ Р·Р°РїРёСЃРё РЅРѕРјРёРЅР°Р»РѕРІ РєР°СЂС‚ СЃ РєРѕРЅР°(battlefield)
 void ReadToTempIntArr(Koloda* Battlefield, int* temp_nominal_arr, int temp_number_cards = 9)
 {
 	int temp_number;
 	bool key = true;
-	// Контрольное заминусовывание массиива
+	// РљРѕРЅС‚СЂРѕР»СЊРЅРѕРµ Р·Р°РјРёРЅСѓСЃРѕРІС‹РІР°РЅРёРµ РјР°СЃСЃРёРёРІР°
 	for (size_t i = 0; i < temp_number_cards; i++)
 	{
 		temp_nominal_arr[i] = -1;
 	}
 
-	// Запись уникальных номиналов карт с battlefiled
+	// Р—Р°РїРёСЃСЊ СѓРЅРёРєР°Р»СЊРЅС‹С… РЅРѕРјРёРЅР°Р»РѕРІ РєР°СЂС‚ СЃ battlefiled
 	for (int i = 0, k = 0; i < Cards_in_deck(Battlefield); i++)
 	{
 		key = true;
@@ -2450,7 +2450,7 @@ void ReadToTempIntArr(Koloda* Battlefield, int* temp_nominal_arr, int temp_numbe
 	}
 }
 
-// Функция перебора руки игрока. Если номинал на кону совпадает с i-й картой игрока - выводится сообщение. Если игрок подтверждает - карта передается боту, если нет - переход к следующей i-й карте
+// Р¤СѓРЅРєС†РёСЏ РїРµСЂРµР±РѕСЂР° СЂСѓРєРё РёРіСЂРѕРєР°. Р•СЃР»Рё РЅРѕРјРёРЅР°Р» РЅР° РєРѕРЅСѓ СЃРѕРІРїР°РґР°РµС‚ СЃ i-Р№ РєР°СЂС‚РѕР№ РёРіСЂРѕРєР° - РІС‹РІРѕРґРёС‚СЃСЏ СЃРѕРѕР±С‰РµРЅРёРµ. Р•СЃР»Рё РёРіСЂРѕРє РїРѕРґС‚РІРµСЂР¶РґР°РµС‚ - РєР°СЂС‚Р° РїРµСЂРµРґР°РµС‚СЃСЏ Р±РѕС‚Сѓ, РµСЃР»Рё РЅРµС‚ - РїРµСЂРµС…РѕРґ Рє СЃР»РµРґСѓСЋС‰РµР№ i-Р№ РєР°СЂС‚Рµ
 void Podbros_To_Bot(Koloda* Player_cards, Koloda* Bot_cards, Koloda* Battlefield, int* temp_nominal_arr, char** fone, int number_cards = 36, int temp_number_cards = 9, int cards_per_player = 6)
 {
 	int bot_number_cards = Cards_in_deck(Bot_cards);
@@ -2461,10 +2461,10 @@ void Podbros_To_Bot(Koloda* Player_cards, Koloda* Bot_cards, Koloda* Battlefield
 
 	const int yes_no = 2;
 	system("chcp 1251>NUL");
-	string yesno[yes_no]{ "ДА", "НЕТ" };
+	string yesno[yes_no]{ "Р”Рђ", "РќР•Рў" };
 	system("chcp 866>NUL");
 
-	// Вычисление максимально возможного количества подкидываемых карт если их количество меньше 6ти
+	// Р’С‹С‡РёСЃР»РµРЅРёРµ РјР°РєСЃРёРјР°Р»СЊРЅРѕ РІРѕР·РјРѕР¶РЅРѕРіРѕ РєРѕР»РёС‡РµСЃС‚РІР° РїРѕРґРєРёРґС‹РІР°РµРјС‹С… РєР°СЂС‚ РµСЃР»Рё РёС… РєРѕР»РёС‡РµСЃС‚РІРѕ РјРµРЅСЊС€Рµ 6С‚Рё
 	for (size_t i = 0; i < Cards_in_deck(Battlefield); i++)
 	{
 		if (i % 2 != 0)
@@ -2472,7 +2472,7 @@ void Podbros_To_Bot(Koloda* Player_cards, Koloda* Bot_cards, Koloda* Battlefield
 			bot_number_cards++;
 		}
 	}
-	// Вычисление количества уже подброшенных карт
+	// Р’С‹С‡РёСЃР»РµРЅРёРµ РєРѕР»РёС‡РµСЃС‚РІР° СѓР¶Рµ РїРѕРґР±СЂРѕС€РµРЅРЅС‹С… РєР°СЂС‚
 	for (size_t i = 0; i < Cards_in_deck(Battlefield); i++)
 	{
 		if (i % 2 == 0)
@@ -2480,23 +2480,23 @@ void Podbros_To_Bot(Koloda* Player_cards, Koloda* Bot_cards, Koloda* Battlefield
 			player_temp_number_cards++;
 		}
 	}
-	// Пока можно подбрасывать - суммарное число карт не больше 6ти или не больше начального количества карт бота
+	// РџРѕРєР° РјРѕР¶РЅРѕ РїРѕРґР±СЂР°СЃС‹РІР°С‚СЊ - СЃСѓРјРјР°СЂРЅРѕРµ С‡РёСЃР»Рѕ РєР°СЂС‚ РЅРµ Р±РѕР»СЊС€Рµ 6С‚Рё РёР»Рё РЅРµ Р±РѕР»СЊС€Рµ РЅР°С‡Р°Р»СЊРЅРѕРіРѕ РєРѕР»РёС‡РµСЃС‚РІР° РєР°СЂС‚ Р±РѕС‚Р°
 
 	for (size_t i = 0; i < Cards_in_deck(Player_cards); i++)
 	{
-		//Подброс карт
+		//РџРѕРґР±СЂРѕСЃ РєР°СЂС‚
 		for (int j = 0; j < temp_number_cards; j++)
 		{
 			if (Player_cards[i].number == temp_nominal_arr[j])
 			{
-				//Карту подбросить можно
+				//РљР°СЂС‚Сѓ РїРѕРґР±СЂРѕСЃРёС‚СЊ РјРѕР¶РЅРѕ
 				key = true;
 				index = i;
 				break;
 			}
 			else
 			{
-				// Карту подбросить нельзя
+				// РљР°СЂС‚Сѓ РїРѕРґР±СЂРѕСЃРёС‚СЊ РЅРµР»СЊР·СЏ
 				key = false;
 			}
 		}
@@ -2504,20 +2504,20 @@ void Podbros_To_Bot(Koloda* Player_cards, Koloda* Bot_cards, Koloda* Battlefield
 		{
 			do
 			{
-				// информационное окно с функцией выбора
+				// РёРЅС„РѕСЂРјР°С†РёРѕРЅРЅРѕРµ РѕРєРЅРѕ СЃ С„СѓРЅРєС†РёРµР№ РІС‹Р±РѕСЂР°
 				PrintCurrentFone(fone, 5, 59, (Color)White, (Color)Blue, 60, 14);
 				SetColor(White, Blue);
 				SetCursor(72, 15);
 				system("chcp 1251>NUL");
-				cout << "БОТ ВЗЯЛ КАРТЫ. ХОТИТЕ ПОДБРОСИТЬ?";
+				cout << "Р‘РћРў Р’Р—РЇР› РљРђР РўР«. РҐРћРўРРўР• РџРћР”Р‘Р РћРЎРРўР¬?";
 				system("chcp 866>NUL");
 				SetCursor(82, 16);
 				cout << Player_cards[index].name;
-				//При нажатии yes PrintChoice возвращает 1
+				//РџСЂРё РЅР°Р¶Р°С‚РёРё yes PrintChoice РІРѕР·РІСЂР°С‰Р°РµС‚ 1
 				player_chioce = PrintChoice(yesno, 2, 38, 70, 17);
-				//Стирает сообщение
+				//РЎС‚РёСЂР°РµС‚ СЃРѕРѕР±С‰РµРЅРёРµ
 				PrintCurrentFone(fone, 6, 60, (Color)Green, 60, 14);
-				// Если функция вернула 1 игрок подбросил иначе - проверяю  следующую карту в руке игрока
+				// Р•СЃР»Рё С„СѓРЅРєС†РёСЏ РІРµСЂРЅСѓР»Р° 1 РёРіСЂРѕРє РїРѕРґР±СЂРѕСЃРёР» РёРЅР°С‡Рµ - РїСЂРѕРІРµСЂСЏСЋ  СЃР»РµРґСѓСЋС‰СѓСЋ РєР°СЂС‚Сѓ РІ СЂСѓРєРµ РёРіСЂРѕРєР°
 				if (player_chioce)
 				{
 					Fill_Pool_Cards(Bot_cards, Player_cards, number_cards, index);
@@ -2527,13 +2527,13 @@ void Podbros_To_Bot(Koloda* Player_cards, Koloda* Bot_cards, Koloda* Battlefield
 					player_temp_number_cards++;
 					break;
 				}
-				//Если отказался подбрасыать
+				//Р•СЃР»Рё РѕС‚РєР°Р·Р°Р»СЃСЏ РїРѕРґР±СЂР°СЃС‹Р°С‚СЊ
 				else
 				{
 					key = false;
 				}
 
-				// Условия выхода из цикла
+				// РЈСЃР»РѕРІРёСЏ РІС‹С…РѕРґР° РёР· С†РёРєР»Р°
 				if (player_temp_number_cards == cards_per_player)
 				{
 					break;
@@ -2551,7 +2551,7 @@ void Podbros_To_Bot(Koloda* Player_cards, Koloda* Bot_cards, Koloda* Battlefield
 	}
 }
 
-// Функция перебора руки БОТА. Если номинал на кону совпадает с i-й картой бота - бот с определенной вероятностью подкидывает карту игроку. Выводится сообщение - бот подкинул такую-то карту. 
+// Р¤СѓРЅРєС†РёСЏ РїРµСЂРµР±РѕСЂР° СЂСѓРєРё Р‘РћРўРђ. Р•СЃР»Рё РЅРѕРјРёРЅР°Р» РЅР° РєРѕРЅСѓ СЃРѕРІРїР°РґР°РµС‚ СЃ i-Р№ РєР°СЂС‚РѕР№ Р±РѕС‚Р° - Р±РѕС‚ СЃ РѕРїСЂРµРґРµР»РµРЅРЅРѕР№ РІРµСЂРѕСЏС‚РЅРѕСЃС‚СЊСЋ РїРѕРґРєРёРґС‹РІР°РµС‚ РєР°СЂС‚Сѓ РёРіСЂРѕРєСѓ. Р’С‹РІРѕРґРёС‚СЃСЏ СЃРѕРѕР±С‰РµРЅРёРµ - Р±РѕС‚ РїРѕРґРєРёРЅСѓР» С‚Р°РєСѓСЋ-С‚Рѕ РєР°СЂС‚Сѓ. 
 void Podbros_To_Player(Koloda *Cards, Koloda* Player_cards, Koloda* Bot_cards, Koloda* Battlefield, int* temp_nominal_arr, char** fone, int number_cards = 36, int temp_number_cards = 9, int cards_per_player = 6)
 {
 	Sort_Pool_Cards(Bot_cards, number_cards);
@@ -2561,7 +2561,7 @@ void Podbros_To_Player(Koloda *Cards, Koloda* Player_cards, Koloda* Bot_cards, K
 	bool bot_chioce = false;
 	int index = 0;
 
-	// Вычисление максимально возможного количества подкидываемых карт если их количество меньше 6ти
+	// Р’С‹С‡РёСЃР»РµРЅРёРµ РјР°РєСЃРёРјР°Р»СЊРЅРѕ РІРѕР·РјРѕР¶РЅРѕРіРѕ РєРѕР»РёС‡РµСЃС‚РІР° РїРѕРґРєРёРґС‹РІР°РµРјС‹С… РєР°СЂС‚ РµСЃР»Рё РёС… РєРѕР»РёС‡РµСЃС‚РІРѕ РјРµРЅСЊС€Рµ 6С‚Рё
 	for (size_t i = 0; i < Cards_in_deck(Battlefield); i++)
 	{
 		if (i % 2 != 0)
@@ -2569,7 +2569,7 @@ void Podbros_To_Player(Koloda *Cards, Koloda* Player_cards, Koloda* Bot_cards, K
 			player_number_cards++;
 		}
 	}
-	// Вычисление количества уже подброшенных карт
+	// Р’С‹С‡РёСЃР»РµРЅРёРµ РєРѕР»РёС‡РµСЃС‚РІР° СѓР¶Рµ РїРѕРґР±СЂРѕС€РµРЅРЅС‹С… РєР°СЂС‚
 	for (size_t i = 0; i < Cards_in_deck(Battlefield); i++)
 	{
 		if (i % 2 == 0)
@@ -2577,16 +2577,16 @@ void Podbros_To_Player(Koloda *Cards, Koloda* Player_cards, Koloda* Bot_cards, K
 			bot_temp_number_cards++;
 		}
 	}
-	// Пока можно подбрасывать - суммарное число карт не больше 6ти или не больше начального количества карт бота
+	// РџРѕРєР° РјРѕР¶РЅРѕ РїРѕРґР±СЂР°СЃС‹РІР°С‚СЊ - СЃСѓРјРјР°СЂРЅРѕРµ С‡РёСЃР»Рѕ РєР°СЂС‚ РЅРµ Р±РѕР»СЊС€Рµ 6С‚Рё РёР»Рё РЅРµ Р±РѕР»СЊС€Рµ РЅР°С‡Р°Р»СЊРЅРѕРіРѕ РєРѕР»РёС‡РµСЃС‚РІР° РєР°СЂС‚ Р±РѕС‚Р°
 	for (size_t i = 0; i < Cards_in_deck(Bot_cards); i++)
 	{
 		Sort_Pool_Cards(Bot_cards, number_cards);
-		//Подброс карт ботом
+		//РџРѕРґР±СЂРѕСЃ РєР°СЂС‚ Р±РѕС‚РѕРј
 		for (int j = 0; j < temp_number_cards; j++)
 		{
 			if (Bot_cards[i].number == temp_nominal_arr[j])
 			{
-				//Карту подбросить можно
+				//РљР°СЂС‚Сѓ РїРѕРґР±СЂРѕСЃРёС‚СЊ РјРѕР¶РЅРѕ
 				key = true;
 				index = i;
 				break;
@@ -2594,7 +2594,7 @@ void Podbros_To_Player(Koloda *Cards, Koloda* Player_cards, Koloda* Bot_cards, K
 			}
 			else
 			{
-				// Карту подбросить нельзя
+				// РљР°СЂС‚Сѓ РїРѕРґР±СЂРѕСЃРёС‚СЊ РЅРµР»СЊР·СЏ
 				key = false;
 			}
 		}
@@ -2606,13 +2606,13 @@ void Podbros_To_Player(Koloda *Cards, Koloda* Player_cards, Koloda* Bot_cards, K
 		{
 			do
 			{
-				// Если количество карт в доборе > 0
+				// Р•СЃР»Рё РєРѕР»РёС‡РµСЃС‚РІРѕ РєР°СЂС‚ РІ РґРѕР±РѕСЂРµ > 0
 				if (Cards_in_deck(Cards)>0)
 				{
-					// Вычисляиется вероятность подбрасывания
+					// Р’С‹С‡РёСЃР»СЏРёРµС‚СЃСЏ РІРµСЂРѕСЏС‚РЅРѕСЃС‚СЊ РїРѕРґР±СЂР°СЃС‹РІР°РЅРёСЏ
 					if (rand()%100 < chance_to_drop)
 					{
-						// Если карта козырь - бот не покидывает
+						// Р•СЃР»Рё РєР°СЂС‚Р° РєРѕР·С‹СЂСЊ - Р±РѕС‚ РЅРµ РїРѕРєРёРґС‹РІР°РµС‚
 						if (Bot_cards[index].trump)
 						{
 							bot_chioce = false;
@@ -2623,7 +2623,7 @@ void Podbros_To_Player(Koloda *Cards, Koloda* Player_cards, Koloda* Bot_cards, K
 						}
 					}
 				}
-				// Если карт в доборе 0 - бот подкидывает всегда все что может
+				// Р•СЃР»Рё РєР°СЂС‚ РІ РґРѕР±РѕСЂРµ 0 - Р±РѕС‚ РїРѕРґРєРёРґС‹РІР°РµС‚ РІСЃРµРіРґР° РІСЃРµ С‡С‚Рѕ РјРѕР¶РµС‚
 				else
 				{
 					bot_chioce = true;
@@ -2631,19 +2631,19 @@ void Podbros_To_Player(Koloda *Cards, Koloda* Player_cards, Koloda* Bot_cards, K
 
 				if (bot_chioce)
 				{
-					//Информационное сообщение
+					//РРЅС„РѕСЂРјР°С†РёРѕРЅРЅРѕРµ СЃРѕРѕР±С‰РµРЅРёРµ
 					PrintCurrentFone(fone, 5, 59, (Color)White, (Color)Red, 60, 14);
 					SetColor(White, Red);
 					SetCursor(76, 15);
 					system("chcp 1251>NUL");
-					cout << "БОТ ПОДБРАСЫВАЕТ ВАМ КАРТЫ:";
+					cout << "Р‘РћРў РџРћР”Р‘Р РђРЎР«Р’РђР•Рў Р’РђРњ РљРђР РўР«:";
 					system("chcp 866>NUL");
 					SetCursor(82, 16);
 					cout << Bot_cards[index].name;
 					Info_OK((Color)Red, (Color)White, 88, 17);
 					PrintCurrentFone(fone, 6, 60, (Color)Green, 60, 14);
 				}
-				// Если бот решил подбросить карту - bot_chioce = 1 иначе - проверяю  следующую карту в руке игрока
+				// Р•СЃР»Рё Р±РѕС‚ СЂРµС€РёР» РїРѕРґР±СЂРѕСЃРёС‚СЊ РєР°СЂС‚Сѓ - bot_chioce = 1 РёРЅР°С‡Рµ - РїСЂРѕРІРµСЂСЏСЋ  СЃР»РµРґСѓСЋС‰СѓСЋ РєР°СЂС‚Сѓ РІ СЂСѓРєРµ РёРіСЂРѕРєР°
 				if (bot_chioce)
 				{
 					Fill_Pool_Cards(Player_cards, Bot_cards, number_cards, index);
@@ -2653,13 +2653,13 @@ void Podbros_To_Player(Koloda *Cards, Koloda* Player_cards, Koloda* Bot_cards, K
 					bot_temp_number_cards++;
 					break;
 				}
-				//Если отказался подбрасыать
+				//Р•СЃР»Рё РѕС‚РєР°Р·Р°Р»СЃСЏ РїРѕРґР±СЂР°СЃС‹Р°С‚СЊ
 				else
 				{
 					key = false;
 				}
 
-				// Условия выхода из цикла
+				// РЈСЃР»РѕРІРёСЏ РІС‹С…РѕРґР° РёР· С†РёРєР»Р°
 				if (bot_temp_number_cards == cards_per_player)
 				{
 					break;
@@ -2693,7 +2693,7 @@ void GameFunc(Koloda* Cards, Koloda* Player_cards, Koloda* Bot_cards, Koloda* Pl
 	int X_step = 11;
 	//int round = 0;
 	int card_nominal = 9;
-	// записывается количество карт для проверки срабатывания блока БИТО
+	// Р·Р°РїРёСЃС‹РІР°РµС‚СЃСЏ РєРѕР»РёС‡РµСЃС‚РІРѕ РєР°СЂС‚ РґР»СЏ РїСЂРѕРІРµСЂРєРё СЃСЂР°Р±Р°С‚С‹РІР°РЅРёСЏ Р±Р»РѕРєР° Р‘РРўРћ
 	int temp_number_player_card = 0;
 	int botanswer;
 	bool player_otbilsya = true;
@@ -2701,13 +2701,13 @@ void GameFunc(Koloda* Cards, Koloda* Player_cards, Koloda* Bot_cards, Koloda* Pl
 	int number_player_games = 0;
 	int wins = 0;
 
-	// Массив для хранения номиналов - используется при подкидывании карт после того как игрок/бот взял карты
+	// РњР°СЃСЃРёРІ РґР»СЏ С…СЂР°РЅРµРЅРёСЏ РЅРѕРјРёРЅР°Р»РѕРІ - РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ РїСЂРё РїРѕРґРєРёРґС‹РІР°РЅРёРё РєР°СЂС‚ РїРѕСЃР»Рµ С‚РѕРіРѕ РєР°Рє РёРіСЂРѕРє/Р±РѕС‚ РІР·СЏР» РєР°СЂС‚С‹
 	int* temp_nominal_battlefield_cards = new int[card_nominal];
 
 	const int yes_no = 2;
 	system("chcp 1251>NUL");
-	string rechange[yes_no]{ "ПЕРЕВЫБРАТЬ", "ЗАВЕРШИТЬ ХОД" };
-	string yesno[yes_no]{ "ДА", "НЕТ" };
+	string rechange[yes_no]{ "РџР•Р Р•Р’Р«Р‘Р РђРўР¬", "Р—РђР’Р•Р РЁРРўР¬ РҐРћР”" };
+	string yesno[yes_no]{ "Р”Рђ", "РќР•Рў" };
 	system("chcp 866>NUL");
 
 	PrintCurrentFone(fone, fone_row, fone_col, (Color)Green, 1, 1);
@@ -2718,14 +2718,14 @@ void GameFunc(Koloda* Cards, Koloda* Player_cards, Koloda* Bot_cards, Koloda* Pl
 	PrintSuitGorizont(4, 29, (Color)LightMagenta, (Color)LightCyan);
 	Sleep(sleep1000 / 5);
 
-	// количество карт в колоде
+	// РєРѕР»РёС‡РµСЃС‚РІРѕ РєР°СЂС‚ РІ РєРѕР»РѕРґРµ
 	SetCursor(5, 35);
 	SetColor(Red, White);
 	system("chcp 1251>NUL");
-	cout << "КАРТ В КОЛОДЕ: " << Cards_in_deck(Cards);
+	cout << "РљРђР Рў Р’ РљРћР›РћР”Р•: " << Cards_in_deck(Cards);
 	system("chcp 866>NUL");
 
-	//Предъявление козырной карты
+	//РџСЂРµРґСЉСЏРІР»РµРЅРёРµ РєРѕР·С‹СЂРЅРѕР№ РєР°СЂС‚С‹
 	if (First_move(Player_cards, Bot_cards, card_per_payer) < 20)
 	{
 		int card_number = First_move(Player_cards, Bot_cards, card_per_payer) - 10;
@@ -2746,7 +2746,7 @@ void GameFunc(Koloda* Cards, Koloda* Player_cards, Koloda* Bot_cards, Koloda* Pl
 		SetCursor(82, 30);
 		SetColor(Red, White);
 		system("chcp 1251>NUL");
-		cout << "ХОД ИГРОКА!";
+		cout << "РҐРћР” РР“Р РћРљРђ!";
 		system("chcp 866>NUL");
 		_getch();
 		PrintCard(Player_cards[temp_i], card_ico, X_current_card, Y_current_card, width, height, (Color)Green, (Color)Green, true);
@@ -2778,7 +2778,7 @@ void GameFunc(Koloda* Cards, Koloda* Player_cards, Koloda* Bot_cards, Koloda* Pl
 		SetCursor(84, 30);
 		SetColor(Red, White);
 		system("chcp 1251>NUL");
-		cout << "ХОД БОТА!";
+		cout << "РҐРћР” Р‘РћРўРђ!";
 		system("chcp 866>NUL");
 		_getch();
 		PrintCard(Bot_cards[temp_i], card_ico, X_current_card, Y_current_card, width, height, (Color)Green, (Color)Green, true);
@@ -2791,13 +2791,13 @@ void GameFunc(Koloda* Cards, Koloda* Player_cards, Koloda* Bot_cards, Koloda* Pl
 		//bot_otbilsya = true;
 	}
 
-	//Краткие правила
+	//РљСЂР°С‚РєРёРµ РїСЂР°РІРёР»Р°
 	SetCursor(105, 58);
 	SetColor(Black, Green);
 
 	cout << (char)27 << " " << (char)26;
 	system("chcp 1251>NUL");
-	cout << " " << " - Стрелки выбора, ESC - Отмена или взять карты, ENTER - Подтверждение";
+	cout << " " << " - РЎС‚СЂРµР»РєРё РІС‹Р±РѕСЂР°, ESC - РћС‚РјРµРЅР° РёР»Рё РІР·СЏС‚СЊ РєР°СЂС‚С‹, ENTER - РџРѕРґС‚РІРµСЂР¶РґРµРЅРёРµ";
 	system("chcp 866>NUL");
 
 	X_bot_start = 57;
@@ -2817,51 +2817,51 @@ void GameFunc(Koloda* Cards, Koloda* Player_cards, Koloda* Bot_cards, Koloda* Pl
 	bool key_to_continue = false;
 	bool no_exit = false;
 
-	// Цикл раунда
+	// Р¦РёРєР» СЂР°СѓРЅРґР°
 	do
 	{
-		//Ход игрока
+		//РҐРѕРґ РёРіСЂРѕРєР°
 		if (player_otbilsya)
 		{
 			SetColor(Red, White);
 			SetCursor(8, 37);
 			system("chcp 1251>NUL");
-			cout << "ХОД ИГРОКА!";
+			cout << "РҐРћР” РР“Р РћРљРђ!";
 			system("chcp 866>NUL");
 			//!!!
-			// Процедура проверки возможности подбросить карту
+			// РџСЂРѕС†РµРґСѓСЂР° РїСЂРѕРІРµСЂРєРё РІРѕР·РјРѕР¶РЅРѕСЃС‚Рё РїРѕРґР±СЂРѕСЃРёС‚СЊ РєР°СЂС‚Сѓ
 			//!!!
 			player_turn_on = Test_Player_turn_on(Battlefield, Player_cards);
 
 			if (!player_turn_on and Cards_in_deck(Battlefield) != card_per_payer * 2)
 			{
-				//Информационное сообщение
+				//РРЅС„РѕСЂРјР°С†РёРѕРЅРЅРѕРµ СЃРѕРѕР±С‰РµРЅРёРµ
 				PrintCurrentFone(fone, 5, 59, (Color)White, (Color)Red, 60, 14);
 				SetColor(White, Red);
 				SetCursor(62, 15);
 				system("chcp 1251>NUL");
-				cout << "НЕТ ПОДХОДЯЩИХ КАРТ В РУКЕ! НАЖМИТЕ \"OK\" ДЛЯ ПРОДОЛЖЕНИЯ";
+				cout << "РќР•Рў РџРћР”РҐРћР”РЇР©РРҐ РљРђР Рў Р’ Р РЈРљР•! РќРђР–РњРРўР• \"OK\" Р”Р›РЇ РџР РћР”РћР›Р–Р•РќРРЇ";
 				//cout << "NO REQUIRED CARD IN PLAYER HAND! PRESS \"OK\" TO CONTINUE";
 				system("chcp 866>NUL");
 				Info_OK((Color)Red, (Color)White, 88, 17);
 				PrintCurrentFone(fone, 6, 60, (Color)Green, 60, 14);
 			}
-			// Проверка максимально возможного числа бодброшенных карт боту
+			// РџСЂРѕРІРµСЂРєР° РјР°РєСЃРёРјР°Р»СЊРЅРѕ РІРѕР·РјРѕР¶РЅРѕРіРѕ С‡РёСЃР»Р° Р±РѕРґР±СЂРѕС€РµРЅРЅС‹С… РєР°СЂС‚ Р±РѕС‚Сѓ
 			if (Cards_in_deck(Battlefield) == card_per_payer * 2)
 			{
 				player_turn_on = false;
-				//Информационное сообщение
+				//РРЅС„РѕСЂРјР°С†РёРѕРЅРЅРѕРµ СЃРѕРѕР±С‰РµРЅРёРµ
 				PrintCurrentFone(fone, 5, 59, (Color)White, (Color)Red, 60, 14);
 				SetColor(White, Red);
 				SetCursor(62, 15);
 				system("chcp 1251>NUL");
-				cout << "ДОСТИГНУТО МАКСИМАЛЬНО ВОЗМОЖНОЕ ЧИСЛО ПОДБРОШЕННЫХ КАРТ";
+				cout << "Р”РћРЎРўРР“РќРЈРўРћ РњРђРљРЎРРњРђР›Р¬РќРћ Р’РћР—РњРћР–РќРћР• Р§РРЎР›Рћ РџРћР”Р‘Р РћРЁР•РќРќР«РҐ РљРђР Рў";
 				system("chcp 866>NUL");
 				Info_OK((Color)Red, (Color)White, 88, 17);
 				PrintCurrentFone(fone, 6, 60, (Color)Green, 60, 14);
 			}
 
-			// Процедура проверки правильности подброски карты
+			// РџСЂРѕС†РµРґСѓСЂР° РїСЂРѕРІРµСЂРєРё РїСЂР°РІРёР»СЊРЅРѕСЃС‚Рё РїРѕРґР±СЂРѕСЃРєРё РєР°СЂС‚С‹
 			if (player_turn_on)
 			{
 				key_to_continue = false;
@@ -2870,10 +2870,10 @@ void GameFunc(Koloda* Cards, Koloda* Player_cards, Koloda* Bot_cards, Koloda* Pl
 				{
 					no_exit = false;
 					temp_i = Chioce_Player_Card(Player_cards, card_ico, fone, X_Cards_Coordinat_and_Step(Cards_in_deck(Player_cards)) / 100, Y_player_start, X_Cards_Coordinat_and_Step(Cards_in_deck(Player_cards)) % 100);
-					// Игрок захотел прекратить раунд
+					// РРіСЂРѕРє Р·Р°С…РѕС‚РµР» РїСЂРµРєСЂР°С‚РёС‚СЊ СЂР°СѓРЅРґ
 					if (temp_i == -1 and Cards_in_deck(Battlefield) > 0)
 					{
-						//Чтобы не выйти из массива
+						//Р§С‚РѕР±С‹ РЅРµ РІС‹Р№С‚Рё РёР· РјР°СЃСЃРёРІР°
 						temp_i = 0;
 						player_turn_on = false;
 						break;
@@ -2882,7 +2882,7 @@ void GameFunc(Koloda* Cards, Koloda* Player_cards, Koloda* Bot_cards, Koloda* Pl
 					{
 						no_exit = true;
 					}
-					// Проверка возможности подкинуть карту
+					// РџСЂРѕРІРµСЂРєР° РІРѕР·РјРѕР¶РЅРѕСЃС‚Рё РїРѕРґРєРёРЅСѓС‚СЊ РєР°СЂС‚Сѓ
 					if (Cards_in_deck(Battlefield) > 0)
 					{
 						for (size_t i = 0; i < Cards_in_deck(Battlefield); i++)
@@ -2899,16 +2899,16 @@ void GameFunc(Koloda* Cards, Koloda* Player_cards, Koloda* Bot_cards, Koloda* Pl
 							SetColor(White, Blue);
 							SetCursor(62, 15);
 							system("chcp 1251>NUL");
-							cout << "                 ВЫБРАНА НЕВЕРНАЯ КАРТА!";
+							cout << "                 Р’Р«Р‘Р РђРќРђ РќР•Р’Р•Р РќРђРЇ РљРђР РўРђ!";
 							system("chcp 866>NUL");
-							//При нажатии rechange возвращает 1
+							//РџСЂРё РЅР°Р¶Р°С‚РёРё rechange РІРѕР·РІСЂР°С‰Р°РµС‚ 1
 							key_to_continue = 1 - PrintChoice(rechange, 2, 30, 68, 17);
-							//Стирает сообщение
+							//РЎС‚РёСЂР°РµС‚ СЃРѕРѕР±С‰РµРЅРёРµ
 							PrintCurrentFone(fone, 6, 60, (Color)Green, 60, 14);
-							//Перерисовывает карты игрока
+							//РџРµСЂРµСЂРёСЃРѕРІС‹РІР°РµС‚ РєР°СЂС‚С‹ РёРіСЂРѕРєР°
 							PrintCurrentFone(fone, 19, 159, (Color)Green, 10, 39);
 							Print_players_Cards(Player_cards, card_ico, Cards_in_deck(Player_cards), X_Cards_Coordinat_and_Step(Cards_in_deck(Player_cards)) / 100, Y_player_start, X_Cards_Coordinat_and_Step(Cards_in_deck(Player_cards)) % 100, false);
-							//Игрок говорит Бито!
+							//РРіСЂРѕРє РіРѕРІРѕСЂРёС‚ Р‘РёС‚Рѕ!
 							if (key_to_continue)
 							{
 								player_turn_on = false;
@@ -2922,7 +2922,7 @@ void GameFunc(Koloda* Cards, Koloda* Player_cards, Koloda* Bot_cards, Koloda* Pl
 							key_to_continue = true;
 							Print_players_Cards(Player_cards, card_ico, Cards_in_deck(Player_cards), X_Cards_Coordinat_and_Step(Cards_in_deck(Player_cards)) / 100, Y_player_start, X_Cards_Coordinat_and_Step(Cards_in_deck(Player_cards)) % 100, false);
 						}
-						// Обновление фона в руке игрока
+						// РћР±РЅРѕРІР»РµРЅРёРµ С„РѕРЅР° РІ СЂСѓРєРµ РёРіСЂРѕРєР°
 						if (no_exit)
 						{
 							PrintCurrentFone(fone, 19, 159, (Color)Green, 10, 39);
@@ -2932,17 +2932,17 @@ void GameFunc(Koloda* Cards, Koloda* Player_cards, Koloda* Bot_cards, Koloda* Pl
 
 				} while (!key_to_continue);
 			}
-			// Отработка хода
+			// РћС‚СЂР°Р±РѕС‚РєР° С…РѕРґР°
 			if (player_turn_on)
 			{
 				Fill_Pool_Cards(Battlefield, Player_cards, number_cards, temp_i);
 				PrintCard(Player_cards[temp_i], card_ico, battlefield_X_start + battlefield_X_step, battlefield_Y_start - battlefield_Y_step, width, height, (Color)LightMagenta, (Color)LightCyan, false);
 				NullCard(Player_cards, temp_i);
 				Sort_Pool_Cards(Player_cards, number_cards);
-				//Очистка фона и перерисовка карт руки игрока
+				//РћС‡РёСЃС‚РєР° С„РѕРЅР° Рё РїРµСЂРµСЂРёСЃРѕРІРєР° РєР°СЂС‚ СЂСѓРєРё РёРіСЂРѕРєР°
 				PrintCurrentFone(fone, 19, 159, (Color)Green, 10, 39);
 				Print_players_Cards(Player_cards, card_ico, Cards_in_deck(Player_cards), X_Cards_Coordinat_and_Step(Cards_in_deck(Player_cards)) / 100, Y_player_start, X_Cards_Coordinat_and_Step(Cards_in_deck(Player_cards)) % 100, false);
-				//Функция ответ бота
+				//Р¤СѓРЅРєС†РёСЏ РѕС‚РІРµС‚ Р±РѕС‚Р°
 				botanswer = Bot_Answer_Level_0(Bot_cards, Battlefield);
 				if (botanswer != -1)
 				{
@@ -2954,13 +2954,13 @@ void GameFunc(Koloda* Cards, Koloda* Player_cards, Koloda* Bot_cards, Koloda* Pl
 					PrintCurrentFone(fone, 20, 159, (Color)Green, 10, 1);
 					Print_players_Cards(Bot_cards, card_ico, Cards_in_deck(Bot_cards), X_Cards_Coordinat_and_Step(Cards_in_deck(Bot_cards)) / 100, Y_bot_start, X_Cards_Coordinat_and_Step(Cards_in_deck(Bot_cards)) % 100, true);
 				}
-				//Бот взял карты
+				//Р‘РѕС‚ РІР·СЏР» РєР°СЂС‚С‹
 				else
 				{
 					//cout << "No CARDS!";
-					//Определение номиналов карт на кону
+					//РћРїСЂРµРґРµР»РµРЅРёРµ РЅРѕРјРёРЅР°Р»РѕРІ РєР°СЂС‚ РЅР° РєРѕРЅСѓ
 					ReadToTempIntArr(Battlefield, temp_nominal_battlefield_cards);
-					//Проверка возможности подбросить карты боту
+					//РџСЂРѕРІРµСЂРєР° РІРѕР·РјРѕР¶РЅРѕСЃС‚Рё РїРѕРґР±СЂРѕСЃРёС‚СЊ РєР°СЂС‚С‹ Р±РѕС‚Сѓ
 					// Podbros_To_Bot()
 					Podbros_To_Bot(Player_cards, Bot_cards, Battlefield, temp_nominal_battlefield_cards, fone);
 					for (size_t i = 0; i < Cards_in_deck(Battlefield); i++)
@@ -2973,27 +2973,27 @@ void GameFunc(Koloda* Cards, Koloda* Player_cards, Koloda* Bot_cards, Koloda* Pl
 					Print_players_Cards(Player_cards, card_ico, Cards_in_deck(Player_cards), X_Cards_Coordinat_and_Step(Cards_in_deck(Player_cards)) / 100, Y_player_start, X_Cards_Coordinat_and_Step(Cards_in_deck(Player_cards)) % 100, false);
 					PrintCurrentFone(fone, 20, 159, (Color)Green, 10, 1);
 					Print_players_Cards(Bot_cards, card_ico, Cards_in_deck(Bot_cards), X_Cards_Coordinat_and_Step(Cards_in_deck(Bot_cards)) / 100, Y_bot_start, X_Cards_Coordinat_and_Step(Cards_in_deck(Bot_cards)) % 100, true);
-					//Затирание поля
+					//Р—Р°С‚РёСЂР°РЅРёРµ РїРѕР»СЏ
 					PrintCurrentFone(fone, 20, 100, (Color)Green, battlefield_X_start, battlefield_Y_start - 2);
-					// Проверка предпоследней карты
+					// РџСЂРѕРІРµСЂРєР° РїСЂРµРґРїРѕСЃР»РµРґРЅРµР№ РєР°СЂС‚С‹
 					if (Cards_in_deck(Cards) == 1)
 					{
 						PrintCurrentFone(fone, 9, 19, (Color)Green, 4, 25);
 						PrintCard(Cards[35], card_ico, x, y, width, height, (Color)LightMagenta, (Color)LightCyan, false);
 					}
-					// Проверка последней карты
+					// РџСЂРѕРІРµСЂРєР° РїРѕСЃР»РµРґРЅРµР№ РєР°СЂС‚С‹
 					if (Cards_in_deck(Cards) == 0)
 					{
 						PrintCurrentFone(fone, 9, 19, (Color)Green, 4, 25);
 					}
-					//Обновление счетчика карт
+					//РћР±РЅРѕРІР»РµРЅРёРµ СЃС‡РµС‚С‡РёРєР° РєР°СЂС‚
 					SetCursor(5, 35);
 					SetColor(Green, Green);
 					cout << "                 " << Cards_in_deck(Cards);
 					SetCursor(5, 35);
 					SetColor(Red, White);
 					system("chcp 1251>NUL");
-					cout << "КАРТ В КОЛОДЕ: " << Cards_in_deck(Cards);
+					cout << "РљРђР Рў Р’ РљРћР›РћР”Р•: " << Cards_in_deck(Cards);
 					system("chcp 866>NUL");
 				}
 				battlefield_X_step += 15;
@@ -3004,26 +3004,26 @@ void GameFunc(Koloda* Cards, Koloda* Player_cards, Koloda* Bot_cards, Koloda* Pl
 				}
 			}
 		}
-		//Ход бота
+		//РҐРѕРґ Р±РѕС‚Р°
 		else
 		{
 			SetColor(Red, White);
 			SetCursor(9, 23);
 			system("chcp 1251>NUL");
-			cout << "ХОД БОТА!";
+			cout << "РҐРћР” Р‘РћРўРђ!";
 			system("chcp 866>NUL");
-			//Проверка может ли Бот ходить или подкидывать карты
+			//РџСЂРѕРІРµСЂРєР° РјРѕР¶РµС‚ Р»Рё Р‘РѕС‚ С…РѕРґРёС‚СЊ РёР»Рё РїРѕРґРєРёРґС‹РІР°С‚СЊ РєР°СЂС‚С‹
 			player_turn_on = Test_Player_turn_on(Battlefield, Bot_cards);
 
-			//Бот выбирает карту для хода (КОГДА ДОБОР РАВЕН 0 - БОТ МОЖЕТ ХОДИТЬ С КОЗЫРЕЙ ПО МЕНЬШЕМУ НОМИНАЛУ И ПОДКИДЫВАТЬ КОЗЫРИ!)
+			//Р‘РѕС‚ РІС‹Р±РёСЂР°РµС‚ РєР°СЂС‚Сѓ РґР»СЏ С…РѕРґР° (РљРћР“Р”Рђ Р”РћР‘РћР  Р РђР’Р•Рќ 0 - Р‘РћРў РњРћР–Р•Рў РҐРћР”РРўР¬ РЎ РљРћР—Р«Р Р•Р™ РџРћ РњР•РќР¬РЁР•РњРЈ РќРћРњРРќРђР›РЈ Р РџРћР”РљРР”Р«Р’РђРўР¬ РљРћР—Р«Р Р!)
 			temp_i = Bot_Turn_Level_0(Bot_cards, Battlefield, Cards, player_turn_on);
-			// Проверка на подбрасывание козырей пока колода добора не пуста
+			// РџСЂРѕРІРµСЂРєР° РЅР° РїРѕРґР±СЂР°СЃС‹РІР°РЅРёРµ РєРѕР·С‹СЂРµР№ РїРѕРєР° РєРѕР»РѕРґР° РґРѕР±РѕСЂР° РЅРµ РїСѓСЃС‚Р°
 			if (temp_i == -1)
 			{
 				player_turn_on = false;
 			}
 
-			// Проверка максимально возможного числа бодброшенных карт игроку
+			// РџСЂРѕРІРµСЂРєР° РјР°РєСЃРёРјР°Р»СЊРЅРѕ РІРѕР·РјРѕР¶РЅРѕРіРѕ С‡РёСЃР»Р° Р±РѕРґР±СЂРѕС€РµРЅРЅС‹С… РєР°СЂС‚ РёРіСЂРѕРєСѓ
 			if (Cards_in_deck(Battlefield) == card_per_payer * 2)
 			{
 				player_turn_on = false;
@@ -3035,45 +3035,45 @@ void GameFunc(Koloda* Cards, Koloda* Player_cards, Koloda* Bot_cards, Koloda* Pl
 				PrintCard(Bot_cards[temp_i], card_ico, battlefield_X_start + battlefield_X_step, battlefield_Y_start - battlefield_Y_step, width, height, (Color)LightMagenta, (Color)LightCyan, false);
 				NullCard(Bot_cards, temp_i);
 				Sort_Pool_Cards(Bot_cards, number_cards);
-				//Очистка фона и перерисовка карт руки бота
+				//РћС‡РёСЃС‚РєР° С„РѕРЅР° Рё РїРµСЂРµСЂРёСЃРѕРІРєР° РєР°СЂС‚ СЂСѓРєРё Р±РѕС‚Р°
 				PrintCurrentFone(fone, 20, 159, (Color)Green, 10, 1);
 				Print_players_Cards(Bot_cards, card_ico, Cards_in_deck(Bot_cards), X_Cards_Coordinat_and_Step(Cards_in_deck(Bot_cards)) / 100, Y_bot_start, X_Cards_Coordinat_and_Step(Cards_in_deck(Bot_cards)) % 100, true);
 
-				//Проверка на возможность игрока отбиться
+				//РџСЂРѕРІРµСЂРєР° РЅР° РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ РёРіСЂРѕРєР° РѕС‚Р±РёС‚СЊСЃСЏ
 				player_answer_on = Bot_Answer_Level_0(Player_cards, Battlefield);
 
-				// Если игрок может отбиться
+				// Р•СЃР»Рё РёРіСЂРѕРє РјРѕР¶РµС‚ РѕС‚Р±РёС‚СЊСЃСЏ
 				if (player_answer_on != -1)
 				{
 					do
 					{
 						if (player_answer_on != -1)
 						{
-							// Ответ игрока
+							// РћС‚РІРµС‚ РёРіСЂРѕРєР°
 							temp_i = Chioce_Player_Card(Player_cards, card_ico, fone, X_Cards_Coordinat_and_Step(Cards_in_deck(Player_cards)) / 100, Y_player_start, X_Cards_Coordinat_and_Step(Cards_in_deck(Player_cards)) % 100);
 							key_to_continue = false;
-							// Игрок хочет взять карту
+							// РРіСЂРѕРє С…РѕС‡РµС‚ РІР·СЏС‚СЊ РєР°СЂС‚Сѓ
 							if (temp_i == -1)
 							{
 								PrintCurrentFone(fone, 5, 59, (Color)White, (Color)Blue, 60, 14);
 								SetColor(White, Blue);
 								SetCursor(62, 15);
 								system("chcp 1251>NUL");
-								cout << "                 ВЫ ХОТИТЕ ВЗЯТЬ КАРТУ?";
+								cout << "                 Р’Р« РҐРћРўРРўР• Р’Р—РЇРўР¬ РљРђР РўРЈ?";
 								system("chcp 866>NUL");
-								//При нажатии yes PrintChoice возвращает 1
+								//РџСЂРё РЅР°Р¶Р°С‚РёРё yes PrintChoice РІРѕР·РІСЂР°С‰Р°РµС‚ 1
 								key_to_continue = 1 - PrintChoice(yesno, 2, 38, 70, 17);
-								//Стирает сообщение
+								//РЎС‚РёСЂР°РµС‚ СЃРѕРѕР±С‰РµРЅРёРµ
 								PrintCurrentFone(fone, 6, 60, (Color)Green, 60, 14);
-								//Перерисовывает карты игрока
+								//РџРµСЂРµСЂРёСЃРѕРІС‹РІР°РµС‚ РєР°СЂС‚С‹ РёРіСЂРѕРєР°
 								PrintCurrentFone(fone, 19, 159, (Color)Green, 10, 39);
 								Print_players_Cards(Player_cards, card_ico, Cards_in_deck(Player_cards), X_Cards_Coordinat_and_Step(Cards_in_deck(Player_cards)) / 100, Y_player_start, X_Cards_Coordinat_and_Step(Cards_in_deck(Player_cards)) % 100, false);
-								//Игрок говорит БЕРУ!
+								//РРіСЂРѕРє РіРѕРІРѕСЂРёС‚ Р‘Р•Р РЈ!
 								if (!key_to_continue)
 								{
 									player_answer_on = -1;
 
-									//Подброс карт ботом после того как игрок взял карты
+									//РџРѕРґР±СЂРѕСЃ РєР°СЂС‚ Р±РѕС‚РѕРј РїРѕСЃР»Рµ С‚РѕРіРѕ РєР°Рє РёРіСЂРѕРє РІР·СЏР» РєР°СЂС‚С‹
 									ReadToTempIntArr(Battlefield, temp_nominal_battlefield_cards);
 									Podbros_To_Player(Cards, Player_cards, Bot_cards, Battlefield, temp_nominal_battlefield_cards, fone);
 
@@ -3088,27 +3088,27 @@ void GameFunc(Koloda* Cards, Koloda* Player_cards, Koloda* Bot_cards, Koloda* Pl
 									Print_players_Cards(Player_cards, card_ico, Cards_in_deck(Player_cards), X_Cards_Coordinat_and_Step(Cards_in_deck(Player_cards)) / 100, Y_player_start, X_Cards_Coordinat_and_Step(Cards_in_deck(Player_cards)) % 100, false);
 									PrintCurrentFone(fone, 20, 159, (Color)Green, 10, 1);
 									Print_players_Cards(Bot_cards, card_ico, Cards_in_deck(Bot_cards), X_Cards_Coordinat_and_Step(Cards_in_deck(Bot_cards)) / 100, Y_bot_start, X_Cards_Coordinat_and_Step(Cards_in_deck(Bot_cards)) % 100, true);
-									//Затирание поля
+									//Р—Р°С‚РёСЂР°РЅРёРµ РїРѕР»СЏ
 									PrintCurrentFone(fone, 20, 100, (Color)Green, battlefield_X_start, battlefield_Y_start - 2);
-									// Проверка предпоследней карты
+									// РџСЂРѕРІРµСЂРєР° РїСЂРµРґРїРѕСЃР»РµРґРЅРµР№ РєР°СЂС‚С‹
 									if (Cards_in_deck(Cards) == 1)
 									{
 										PrintCurrentFone(fone, 9, 19, (Color)Green, 4, 25);
 										PrintCard(Cards[35], card_ico, x, y, width, height, (Color)LightMagenta, (Color)LightCyan, false);
 									}
-									// Проверка последней карты
+									// РџСЂРѕРІРµСЂРєР° РїРѕСЃР»РµРґРЅРµР№ РєР°СЂС‚С‹
 									if (Cards_in_deck(Cards) == 0)
 									{
 										PrintCurrentFone(fone, 9, 19, (Color)Green, 4, 25);
 									}
-									//Обновление счетчика карт
+									//РћР±РЅРѕРІР»РµРЅРёРµ СЃС‡РµС‚С‡РёРєР° РєР°СЂС‚
 									SetCursor(5, 35);
 									SetColor(Green, Green);
 									cout << "                 " << Cards_in_deck(Cards);
 									SetCursor(5, 35);
 									SetColor(Red, White);
 									system("chcp 1251>NUL");
-									cout << "КАРТ В КОЛОДЕ: " << Cards_in_deck(Cards);
+									cout << "РљРђР Рў Р’ РљРћР›РћР”Р•: " << Cards_in_deck(Cards);
 									system("chcp 866>NUL");
 									battlefield_X_step = -15;
 									//round = 0;
@@ -3120,7 +3120,7 @@ void GameFunc(Koloda* Cards, Koloda* Player_cards, Koloda* Bot_cards, Koloda* Pl
 
 							if (!key_to_continue)
 							{
-								// Если картой можно отбиться
+								// Р•СЃР»Рё РєР°СЂС‚РѕР№ РјРѕР¶РЅРѕ РѕС‚Р±РёС‚СЊСЃСЏ
 								if (player_answer_on)
 								{
 
@@ -3133,7 +3133,7 @@ void GameFunc(Koloda* Cards, Koloda* Player_cards, Koloda* Bot_cards, Koloda* Pl
 									break;
 									//player_answer_on = -1;
 								}
-								// Если карта ненадлежащей масти чтобы отбиться
+								// Р•СЃР»Рё РєР°СЂС‚Р° РЅРµРЅР°РґР»РµР¶Р°С‰РµР№ РјР°СЃС‚Рё С‡С‚РѕР±С‹ РѕС‚Р±РёС‚СЊСЃСЏ
 								else
 								{
 									//cout << "Incorrect chioce!!!";
@@ -3141,16 +3141,16 @@ void GameFunc(Koloda* Cards, Koloda* Player_cards, Koloda* Bot_cards, Koloda* Pl
 									SetColor(White, Blue);
 									SetCursor(62, 15);
 									system("chcp 1251>NUL");
-									cout << "                 ВЫБРАНА НЕВЕРНАЯ КАРТА!";
+									cout << "                 Р’Р«Р‘Р РђРќРђ РќР•Р’Р•Р РќРђРЇ РљРђР РўРђ!";
 									system("chcp 866>NUL");
-									//При нажатии rechange возвращает 1
+									//РџСЂРё РЅР°Р¶Р°С‚РёРё rechange РІРѕР·РІСЂР°С‰Р°РµС‚ 1
 									key_to_continue = 1 - PrintChoice(rechange, 2, 30, 68, 17);
-									//Стирает сообщение
+									//РЎС‚РёСЂР°РµС‚ СЃРѕРѕР±С‰РµРЅРёРµ
 									PrintCurrentFone(fone, 6, 60, (Color)Green, 60, 14);
-									//Перерисовывает карты игрока
+									//РџРµСЂРµСЂРёСЃРѕРІС‹РІР°РµС‚ РєР°СЂС‚С‹ РёРіСЂРѕРєР°
 									PrintCurrentFone(fone, 19, 159, (Color)Green, 10, 39);
 									Print_players_Cards(Player_cards, card_ico, Cards_in_deck(Player_cards), X_Cards_Coordinat_and_Step(Cards_in_deck(Player_cards)) / 100, Y_player_start, X_Cards_Coordinat_and_Step(Cards_in_deck(Player_cards)) % 100, false);
-									//Игрок говорит БЕРУ!
+									//РРіСЂРѕРє РіРѕРІРѕСЂРёС‚ Р‘Р•Р РЈ!
 									if (key_to_continue)
 									{
 										player_answer_on = -1;
@@ -3165,27 +3165,27 @@ void GameFunc(Koloda* Cards, Koloda* Player_cards, Koloda* Bot_cards, Koloda* Pl
 										Print_players_Cards(Player_cards, card_ico, Cards_in_deck(Player_cards), X_Cards_Coordinat_and_Step(Cards_in_deck(Player_cards)) / 100, Y_player_start, X_Cards_Coordinat_and_Step(Cards_in_deck(Player_cards)) % 100, false);
 										PrintCurrentFone(fone, 20, 159, (Color)Green, 10, 1);
 										Print_players_Cards(Bot_cards, card_ico, Cards_in_deck(Bot_cards), X_Cards_Coordinat_and_Step(Cards_in_deck(Bot_cards)) / 100, Y_bot_start, X_Cards_Coordinat_and_Step(Cards_in_deck(Bot_cards)) % 100, true);
-										//Затирание поля
+										//Р—Р°С‚РёСЂР°РЅРёРµ РїРѕР»СЏ
 										PrintCurrentFone(fone, 20, 100, (Color)Green, battlefield_X_start, battlefield_Y_start - 2);
-										// Проверка предпоследней карты
+										// РџСЂРѕРІРµСЂРєР° РїСЂРµРґРїРѕСЃР»РµРґРЅРµР№ РєР°СЂС‚С‹
 										if (Cards_in_deck(Cards) == 1)
 										{
 											PrintCurrentFone(fone, 9, 19, (Color)Green, 4, 25);
 											PrintCard(Cards[35], card_ico, x, y, width, height, (Color)LightMagenta, (Color)LightCyan, false);
 										}
-										// Проверка последней карты
+										// РџСЂРѕРІРµСЂРєР° РїРѕСЃР»РµРґРЅРµР№ РєР°СЂС‚С‹
 										if (Cards_in_deck(Cards) == 0)
 										{
 											PrintCurrentFone(fone, 9, 19, (Color)Green, 4, 25);
 										}
-										//Обновление счетчика карт
+										//РћР±РЅРѕРІР»РµРЅРёРµ СЃС‡РµС‚С‡РёРєР° РєР°СЂС‚
 										SetCursor(5, 35);
 										SetColor(Green, Green);
 										cout << "                 " << Cards_in_deck(Cards);
 										SetCursor(5, 35);
 										SetColor(Red, White);
 										system("chcp 1251>NUL");
-										cout << "КАРТ В КОЛОДЕ: " << Cards_in_deck(Cards);
+										cout << "РљРђР Рў Р’ РљРћР›РћР”Р•: " << Cards_in_deck(Cards);
 										system("chcp 866>NUL");
 
 										break;
@@ -3204,15 +3204,15 @@ void GameFunc(Koloda* Cards, Koloda* Player_cards, Koloda* Bot_cards, Koloda* Pl
 						player_answer_on = 1;
 					}
 				}
-				//Если игрок не может отбиться и берет карты
+				//Р•СЃР»Рё РёРіСЂРѕРє РЅРµ РјРѕР¶РµС‚ РѕС‚Р±РёС‚СЊСЃСЏ Рё Р±РµСЂРµС‚ РєР°СЂС‚С‹
 				else
 				{
-					//Информационное сообщение
+					//РРЅС„РѕСЂРјР°С†РёРѕРЅРЅРѕРµ СЃРѕРѕР±С‰РµРЅРёРµ
 					PrintCurrentFone(fone, 5, 59, (Color)White, (Color)Red, 60, 14);
 					SetColor(White, Red);
 					SetCursor(62, 15);
 					system("chcp 1251>NUL");
-					cout << "НЕТ ПОДХОДЯЩИХ КАРТ В РУКЕ! НАЖМИТЕ \"OK\" ДЛЯ ПРОДОЛЖЕНИЯ";
+					cout << "РќР•Рў РџРћР”РҐРћР”РЇР©РРҐ РљРђР Рў Р’ Р РЈРљР•! РќРђР–РњРРўР• \"OK\" Р”Р›РЇ РџР РћР”РћР›Р–Р•РќРРЇ";
 					//cout << "NO REQUIRED CARD IN PLAYER HAND! PRESS \"OK\" TO CONTINUE";
 					system("chcp 866>NUL");
 					Info_OK((Color)Red, (Color)White, 88, 17);
@@ -3227,27 +3227,27 @@ void GameFunc(Koloda* Cards, Koloda* Player_cards, Koloda* Bot_cards, Koloda* Pl
 					Print_players_Cards(Player_cards, card_ico, Cards_in_deck(Player_cards), X_Cards_Coordinat_and_Step(Cards_in_deck(Player_cards)) / 100, Y_player_start, X_Cards_Coordinat_and_Step(Cards_in_deck(Player_cards)) % 100, false);
 					PrintCurrentFone(fone, 20, 159, (Color)Green, 10, 1);
 					Print_players_Cards(Bot_cards, card_ico, Cards_in_deck(Bot_cards), X_Cards_Coordinat_and_Step(Cards_in_deck(Bot_cards)) / 100, Y_bot_start, X_Cards_Coordinat_and_Step(Cards_in_deck(Bot_cards)) % 100, true);
-					//Затирание поля
+					//Р—Р°С‚РёСЂР°РЅРёРµ РїРѕР»СЏ
 					PrintCurrentFone(fone, 20, 100, (Color)Green, battlefield_X_start, battlefield_Y_start - 2);
-					// Проверка предпоследней карты
+					// РџСЂРѕРІРµСЂРєР° РїСЂРµРґРїРѕСЃР»РµРґРЅРµР№ РєР°СЂС‚С‹
 					if (Cards_in_deck(Cards) == 1)
 					{
 						PrintCurrentFone(fone, 9, 19, (Color)Green, 4, 25);
 						PrintCard(Cards[35], card_ico, x, y, width, height, (Color)LightMagenta, (Color)LightCyan, false);
 					}
-					// Проверка последней карты
+					// РџСЂРѕРІРµСЂРєР° РїРѕСЃР»РµРґРЅРµР№ РєР°СЂС‚С‹
 					if (Cards_in_deck(Cards) == 0)
 					{
 						PrintCurrentFone(fone, 9, 19, (Color)Green, 4, 25);
 					}
-					//Обновление счетчика карт
+					//РћР±РЅРѕРІР»РµРЅРёРµ СЃС‡РµС‚С‡РёРєР° РєР°СЂС‚
 					SetCursor(5, 35);
 					SetColor(Green, Green);
 					cout << "                 " << Cards_in_deck(Cards);
 					SetCursor(5, 35);
 					SetColor(Red, White);
 					system("chcp 1251>NUL");
-					cout << "КАРТ В КОЛОДЕ: " << Cards_in_deck(Cards);
+					cout << "РљРђР Рў Р’ РљРћР›РћР”Р•: " << Cards_in_deck(Cards);
 					system("chcp 866>NUL");
 				}
 
@@ -3261,20 +3261,20 @@ void GameFunc(Koloda* Cards, Koloda* Player_cards, Koloda* Bot_cards, Koloda* Pl
 		}
 		//round++;
 		
-		// Победил бот
+		// РџРѕР±РµРґРёР» Р±РѕС‚
 		if (Cards_in_deck(Cards) == 0 and Cards_in_deck(Bot_cards) == 0 and Cards_in_deck(Player_cards) != 0)
 		{
-			//Информационное сообщение Победил бот
+			//РРЅС„РѕСЂРјР°С†РёРѕРЅРЅРѕРµ СЃРѕРѕР±С‰РµРЅРёРµ РџРѕР±РµРґРёР» Р±РѕС‚
 			PrintCurrentFone(fone, 5, 59, (Color)White, (Color)Red, 60, 14);
 			SetColor(White, Red);
 			SetCursor(85, 15);
 			system("chcp 1251>NUL");
-			cout << "БОТ ПОБЕДИЛ";
+			cout << "Р‘РћРў РџРћР‘Р•Р”РР›";
 			//cout << "BOT WINS!";
 			system("chcp 866>NUL");
 			Info_OK((Color)Red, (Color)White, 89, 17);
 			PrintCurrentFone(fone, 6, 60, (Color)Green, 60, 14);
-			//Запись данных в файл
+			//Р—Р°РїРёСЃСЊ РґР°РЅРЅС‹С… РІ С„Р°Р№Р»
 			ReadFileToGamersTable(GameTable, FuncReadF_row_number(temp));
 			number_player_games = GameTable[activeuserslot].games;
 			number_player_games++;
@@ -3291,20 +3291,20 @@ void GameFunc(Koloda* Cards, Koloda* Player_cards, Koloda* Bot_cards, Koloda* Pl
 			break;
 
 		}
-		// Игрок победил 
+		// РРіСЂРѕРє РїРѕР±РµРґРёР» 
 		else if (Cards_in_deck(Cards) == 0 and Cards_in_deck(Player_cards) == 0 and Cards_in_deck(Bot_cards) != 0)
 		{
-			//Информационное сообщение Победил игрок
+			//РРЅС„РѕСЂРјР°С†РёРѕРЅРЅРѕРµ СЃРѕРѕР±С‰РµРЅРёРµ РџРѕР±РµРґРёР» РёРіСЂРѕРє
 			PrintCurrentFone(fone, 5, 59, (Color)White, (Color)Red, 60, 14);
 			SetColor(White, Red);
 			SetCursor(76, 15);
 			system("chcp 1251>NUL");
-			cout << "ПОЗДРАВЛЯЕМ!!! ВЫ ВЫИГРАЛИ!!!";
+			cout << "РџРћР—Р”Р РђР’Р›РЇР•Рњ!!! Р’Р« Р’Р«РР“Р РђР›Р!!!";
 			//cout << "CONGRATULATIONS!!! YOU WIN!!!";
 			system("chcp 866>NUL");
 			Info_OK((Color)Red, (Color)White, 89, 17);
 			PrintCurrentFone(fone, 6, 60, (Color)Green, 60, 14);
-			//Запись данных в файл
+			//Р—Р°РїРёСЃСЊ РґР°РЅРЅС‹С… РІ С„Р°Р№Р»
 			ReadFileToGamersTable(GameTable, FuncReadF_row_number(temp));
 			number_player_games = GameTable[activeuserslot].games;
 			number_player_games++;
@@ -3325,17 +3325,17 @@ void GameFunc(Koloda* Cards, Koloda* Player_cards, Koloda* Bot_cards, Koloda* Pl
 		}
 		else if (Cards_in_deck(Cards) == 0 and Cards_in_deck(Player_cards) == 0 and Cards_in_deck(Bot_cards) == 0)
 		{
-			//Информационное сообщение ничья
+			//РРЅС„РѕСЂРјР°С†РёРѕРЅРЅРѕРµ СЃРѕРѕР±С‰РµРЅРёРµ РЅРёС‡СЊСЏ
 			PrintCurrentFone(fone, 5, 59, (Color)White, (Color)Red, 60, 14);
 			SetColor(White, Red);
 			SetCursor(83, 15);
 			system("chcp 1251>NUL");
-			cout << "!!! НИЧЬЯ !!!";
+			cout << "!!! РќРР§Р¬РЇ !!!";
 			//cout << "!!! DROW !!!";
 			system("chcp 866>NUL");
 			Info_OK((Color)Red, (Color)White, 89, 17);
 			PrintCurrentFone(fone, 6, 60, (Color)Green, 60, 14);
-			//Запись данных в файл
+			//Р—Р°РїРёСЃСЊ РґР°РЅРЅС‹С… РІ С„Р°Р№Р»
 			ReadFileToGamersTable(GameTable, FuncReadF_row_number(temp));
 			number_player_games = GameTable[activeuserslot].games;
 			number_player_games++;
@@ -3353,8 +3353,8 @@ void GameFunc(Koloda* Cards, Koloda* Player_cards, Koloda* Bot_cards, Koloda* Pl
 		}
 
 
-		//!!!БЛОК БИТО!!!
-		// Условие срабатывания функции бито и добора карт если возможно или требуется.
+		//!!!Р‘Р›РћРљ Р‘РРўРћ!!!
+		// РЈСЃР»РѕРІРёРµ СЃСЂР°Р±Р°С‚С‹РІР°РЅРёСЏ С„СѓРЅРєС†РёРё Р±РёС‚Рѕ Рё РґРѕР±РѕСЂР° РєР°СЂС‚ РµСЃР»Рё РІРѕР·РјРѕР¶РЅРѕ РёР»Рё С‚СЂРµР±СѓРµС‚СЃСЏ.
 		if (player_otbilsya)
 		{
 			temp_number_player_card = Cards_in_deck(Player_cards);
@@ -3374,26 +3374,26 @@ void GameFunc(Koloda* Cards, Koloda* Player_cards, Koloda* Bot_cards, Koloda* Pl
 			cout << "            ";
 			//round = 0;
 			battlefield_X_step = 0;
-			//Блок добора
+			//Р‘Р»РѕРє РґРѕР±РѕСЂР°
 			Dobor(Cards, Player_cards, Bot_cards, player_otbilsya);
-			//Очистка фона и перерисовка карт руки игрока
+			//РћС‡РёСЃС‚РєР° С„РѕРЅР° Рё РїРµСЂРµСЂРёСЃРѕРІРєР° РєР°СЂС‚ СЂСѓРєРё РёРіСЂРѕРєР°
 			PrintCurrentFone(fone, 19, 159, (Color)Green, 10, 39);
 			Print_players_Cards(Player_cards, card_ico, Cards_in_deck(Player_cards), X_Cards_Coordinat_and_Step(Cards_in_deck(Player_cards)) / 100, Y_player_start, X_Cards_Coordinat_and_Step(Cards_in_deck(Player_cards)) % 100, false);
-			//Очистка фона и перерисовка карт бота
+			//РћС‡РёСЃС‚РєР° С„РѕРЅР° Рё РїРµСЂРµСЂРёСЃРѕРІРєР° РєР°СЂС‚ Р±РѕС‚Р°
 			PrintCurrentFone(fone, 20, 159, (Color)Green, 10, 1);
 			Print_players_Cards(Bot_cards, card_ico, Cards_in_deck(Bot_cards), X_Cards_Coordinat_and_Step(Cards_in_deck(Bot_cards)) / 100, Y_bot_start, X_Cards_Coordinat_and_Step(Cards_in_deck(Bot_cards)) % 100, true);
-			// Проверка предпоследней карты
+			// РџСЂРѕРІРµСЂРєР° РїСЂРµРґРїРѕСЃР»РµРґРЅРµР№ РєР°СЂС‚С‹
 			if (Cards_in_deck(Cards) == 1)
 			{
 				PrintCurrentFone(fone, 9, 19, (Color)Green, 4, 25);
 				PrintCard(Cards[35], card_ico, x, y, width, height, (Color)LightMagenta, (Color)LightCyan, false);
 			}
-			// Проверка последней карты
+			// РџСЂРѕРІРµСЂРєР° РїРѕСЃР»РµРґРЅРµР№ РєР°СЂС‚С‹
 			if (Cards_in_deck(Cards) == 0)
 			{
 				PrintCurrentFone(fone, 9, 19, (Color)Green, 4, 25);
 			}
-			//Функция бито передает ход
+			//Р¤СѓРЅРєС†РёСЏ Р±РёС‚Рѕ РїРµСЂРµРґР°РµС‚ С…РѕРґ
 			player_otbilsya = bito(Battlefield, Played_cards, player_otbilsya, Cards_in_deck(Battlefield));
 			PrintCurrentFone(fone, 12, 100, (Color)Green, battlefield_X_start, battlefield_Y_start - 2);
 			Print_Played_Card(Played_cards, card_ico);
@@ -3403,7 +3403,7 @@ void GameFunc(Koloda* Cards, Koloda* Player_cards, Koloda* Bot_cards, Koloda* Pl
 			SetCursor(5, 35);
 			SetColor(Red, White);
 			system("chcp 1251>NUL");
-			cout << "КАРТ В КОЛОДЕ: " << Cards_in_deck(Cards);
+			cout << "РљРђР Рў Р’ РљРћР›РћР”Р•: " << Cards_in_deck(Cards);
 			system("chcp 866>NUL");
 		}
 	} while (!end_con);
@@ -3428,13 +3428,13 @@ int main()
 	//SetConsoleOutputCP(1251);
 	srand(time(NULL));
 	system("mode con cols=180 lines=60");
-	//Скрытие курсора
+	//РЎРєСЂС‹С‚РёРµ РєСѓСЂСЃРѕСЂР°
 	CONSOLE_CURSOR_INFO structCursorInfo;
 	GetConsoleCursorInfo(hStdOut, &structCursorInfo);
 	structCursorInfo.bVisible = FALSE;
 	SetConsoleCursorInfo(hStdOut, &structCursorInfo);
 
-	//Размер фона игрового меню
+	//Р Р°Р·РјРµСЂ С„РѕРЅР° РёРіСЂРѕРІРѕРіРѕ РјРµРЅСЋ
 	int row = 60;
 	int col = 180;
 	char** fone = new char* [row];
@@ -3442,7 +3442,7 @@ int main()
 	{
 		fone[i] = new char[col];
 	}
-	//Заплатка игрового меню
+	//Р—Р°РїР»Р°С‚РєР° РёРіСЂРѕРІРѕРіРѕ РјРµРЅСЋ
 	int zrow = 58;//12//25
 	int zcol = 178;//31///55
 	char** clsfone = new char* [zrow];
@@ -3455,26 +3455,26 @@ int main()
 	{
 		players_menu[i] = new char[zcol];
 	}
-	//Настройки главного меню
+	//РќР°СЃС‚СЂРѕР№РєРё РіР»Р°РІРЅРѕРіРѕ РјРµРЅСЋ
 	const int menustrings = 3;
 	const int yes_no = 2;
 
 	system("chcp 1251>NUL");
-	string menu[menustrings]{ "НОВАЯ ИГРА", "ИГРОКИ", "ВЫХОД" };
-	string choice[yes_no]{ "ДА", "НЕТ" };
-	string editplayersmenu[menustrings]{ "СОЗДАТЬ ИГРОКА", "УДАЛИТЬ ИГРОКА", "ВЫХОД ИЗ МЕНЮ" };
+	string menu[menustrings]{ "РќРћР’РђРЇ РР“Р Рђ", "РР“Р РћРљР", "Р’Р«РҐРћР”" };
+	string choice[yes_no]{ "Р”Рђ", "РќР•Рў" };
+	string editplayersmenu[menustrings]{ "РЎРћР—Р”РђРўР¬ РР“Р РћРљРђ", "РЈР”РђР›РРўР¬ РР“Р РћРљРђ", "Р’Р«РҐРћР” РР— РњР•РќР®" };
 	system("chcp 866>NUL");
 
 	//string menu[menustrings]{ "NEW GAME", "PLAYERS", "QUIT" };
 	//string choice[yes_no]{ "YES", "NO" };
 	//string editplayersmenu[menustrings]{ "CREATE PLAYER", "DELETE PLAYER", "EXIT MENU" };
 
-	// Переменная принимающая результат функции главного меню
+	// РџРµСЂРµРјРµРЅРЅР°СЏ РїСЂРёРЅРёРјР°СЋС‰Р°СЏ СЂРµР·СѓР»СЊС‚Р°С‚ С„СѓРЅРєС†РёРё РіР»Р°РІРЅРѕРіРѕ РјРµРЅСЋ
 	int activestring = -1;
 	//bool chioce;
 	bool startgame = false;
 
-	//Даннные об игроках
+	//Р”Р°РЅРЅРЅС‹Рµ РѕР± РёРіСЂРѕРєР°С…
 	FILE* pf;
 	int bufersizeplayers = 12;
 	int file_size = -1;
@@ -3482,13 +3482,13 @@ int main()
 
 	string currentusername;
 	string currentuserpassword;
-	//currentuserslot для удаления пользователя
+	//currentuserslot РґР»СЏ СѓРґР°Р»РµРЅРёСЏ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
 	int currentuserslot;
 	string password_atht;
 	int activeuserslot = 0;
 	bool passwordvalidation = false;
 
-	// Колода карт
+	// РљРѕР»РѕРґР° РєР°СЂС‚
 	int cards_number = 36;
 	int mast = 4;
 	int cards_per_player = 6;
@@ -3510,7 +3510,7 @@ int main()
 	Nullfone(fone, row, col);
 	PrintFon(fone, row, col);
 
-	//Интро
+	//РРЅС‚СЂРѕ
 	if (intro)
 	{
 		KolodaGenerator(Cards, mast, cards_number, card_nominal);
@@ -3520,18 +3520,18 @@ int main()
 		Print_Game_durak(Green, Green, false);
 	}
 
-	//Проверка на отсутствие 5 карт одинаковой масти в руке одного из игроков и присутствия хотябы одного козыря у игроков
+	//РџСЂРѕРІРµСЂРєР° РЅР° РѕС‚СЃСѓС‚СЃС‚РІРёРµ 5 РєР°СЂС‚ РѕРґРёРЅР°РєРѕРІРѕР№ РјР°СЃС‚Рё РІ СЂСѓРєРµ РѕРґРЅРѕРіРѕ РёР· РёРіСЂРѕРєРѕРІ Рё РїСЂРёСЃСѓС‚СЃС‚РІРёСЏ С…РѕС‚СЏР±С‹ РѕРґРЅРѕРіРѕ РєРѕР·С‹СЂСЏ Сѓ РёРіСЂРѕРєРѕРІ
 	bool three_cards_different_bot_hand = false;
 	bool three_cards_different_player_hand = false;
 	bool one_card_is_trump_in_any_hand = false;
 	//long unsigned int rounds = 0;
-	//Основной цикл
+	//РћСЃРЅРѕРІРЅРѕР№ С†РёРєР»
 	do
 	{
-		//Цикл раздачи карт
+		//Р¦РёРєР» СЂР°Р·РґР°С‡Рё РєР°СЂС‚
 		do
 		{
-			// Обнуление рук бота, игрока и битых карт
+			// РћР±РЅСѓР»РµРЅРёРµ СЂСѓРє Р±РѕС‚Р°, РёРіСЂРѕРєР° Рё Р±РёС‚С‹С… РєР°СЂС‚
 			NullPoolCards(Bot_Cards, cards_number);
 			NullPoolCards(Player_Cards, cards_number);
 			NullPoolCards(Played_Cards, cards_number);
@@ -3540,16 +3540,16 @@ int main()
 			three_cards_different_player_hand = false;
 			one_card_is_trump_in_any_hand = false;
 
-			// Генерация колоды, перетасовывание и объявление козыря 
+			// Р“РµРЅРµСЂР°С†РёСЏ РєРѕР»РѕРґС‹, РїРµСЂРµС‚Р°СЃРѕРІС‹РІР°РЅРёРµ Рё РѕР±СЉСЏРІР»РµРЅРёРµ РєРѕР·С‹СЂСЏ 
 			KolodaGenerator(Cards, mast, cards_number, card_nominal);
 			KolodaMix(Cards, cards_number, 100500);
 			Trump_13(Cards, cards_per_player * 2, cards_number);
 
-			// Раздача карт
+			// Р Р°Р·РґР°С‡Р° РєР°СЂС‚
 			RazdachaCards(Cards, Player_Cards, Bot_Cards, cards_number, cards_per_player);
 			SwapTrump(Cards, cards_per_player * 2, cards_number - 1);
 
-			//Проверка на три разные масти карт в руке бота
+			//РџСЂРѕРІРµСЂРєР° РЅР° С‚СЂРё СЂР°Р·РЅС‹Рµ РјР°СЃС‚Рё РєР°СЂС‚ РІ СЂСѓРєРµ Р±РѕС‚Р°
 			int is_hearts = 0;
 			int is_diamonds = 0;
 			int is_clubs = 0;
@@ -3579,7 +3579,7 @@ int main()
 				three_cards_different_bot_hand = 1;
 			}
 
-			//Проверка на три разные масти карт в руке игрока
+			//РџСЂРѕРІРµСЂРєР° РЅР° С‚СЂРё СЂР°Р·РЅС‹Рµ РјР°СЃС‚Рё РєР°СЂС‚ РІ СЂСѓРєРµ РёРіСЂРѕРєР°
 			is_hearts = 0;
 			is_diamonds = 0;
 			is_clubs = 0;
@@ -3609,7 +3609,7 @@ int main()
 				three_cards_different_player_hand = 1;
 			}
 
-			// Проверка на наличие хотябы одного козыря в руках игроков
+			// РџСЂРѕРІРµСЂРєР° РЅР° РЅР°Р»РёС‡РёРµ С…РѕС‚СЏР±С‹ РѕРґРЅРѕРіРѕ РєРѕР·С‹СЂСЏ РІ СЂСѓРєР°С… РёРіСЂРѕРєРѕРІ
 			int number_trumps = 0;
 			for (size_t i = 0; i < cards_number; i++)
 			{
@@ -3625,9 +3625,9 @@ int main()
 			//rounds++;
 		} while (three_cards_different_bot_hand + three_cards_different_player_hand + one_card_is_trump_in_any_hand < 3);
 		
-		// //Количество попыток раздать карты
+		// //РљРѕР»РёС‡РµСЃС‚РІРѕ РїРѕРїС‹С‚РѕРє СЂР°Р·РґР°С‚СЊ РєР°СЂС‚С‹
 		//system("chcp 1251>NUL");
-		//cout << " Количество попыток раздать карты: " << rounds << endl;
+		//cout << " РљРѕР»РёС‡РµСЃС‚РІРѕ РїРѕРїС‹С‚РѕРє СЂР°Р·РґР°С‚СЊ РєР°СЂС‚С‹: " << rounds << endl;
 		//system("chcp 866>NUL");
 		//system("pause>>NULL");
 
@@ -3644,12 +3644,12 @@ int main()
 			fclose(pf);
 		}
 
-		// Новая игра
+		// РќРѕРІР°СЏ РёРіСЂР°
 		if (activestring == 0)
 		{
 			PrintCurrentFone(clsfone, 25, 55, (Color)Green, 65, 20);
 
-			// Если нет игроков
+			// Р•СЃР»Рё РЅРµС‚ РёРіСЂРѕРєРѕРІ
 			if (file_error != 0 or file_size == 0)
 			{
 				zrow = 8;
@@ -3660,9 +3660,9 @@ int main()
 				SetColor(White, Red);
 				SetCursor(81, 24);
 				system("chcp 1251>NUL");
-				cout << "НЕТ ИГРОКОВ В СПИСКЕ!";
+				cout << "РќР•Рў РР“Р РћРљРћР’ Р’ РЎРџРРЎРљР•!";
 				SetCursor(74, 25);
-				cout << "ВЫ ХОТИТЕ СОЗДАТЬ НОВОГО ИГРОКА?";
+				cout << "Р’Р« РҐРћРўРРўР• РЎРћР—Р”РђРўР¬ РќРћР’РћР“Рћ РР“Р РћРљРђ?";
 				SetColor(White, Black);
 				boolchioce = PrintChoice(choice, yes_no, 20, 80, 27);
 				system("chcp 866>NUL");
@@ -3678,7 +3678,7 @@ int main()
 					SetColor(White, Blue);
 					SetCursor(82, 24);
 					system("chcp 1251>NUL");
-					cout << "ВВЕДИТЕ ИМЯ ИГРОКА:";
+					cout << "Р’Р’Р•Р”РРўР• РРњРЇ РР“Р РћРљРђ:";
 					system("chcp 866>NUL");
 					//cout << "ENTER PLAYER NAME:";
 					PrintCurrentFone(players_menu, 3, 42, (Color)White, (Color)Blue, 70, 27, false);
@@ -3691,7 +3691,7 @@ int main()
 					SetColor(White, Blue);
 					SetCursor(82, 24);
 					system("chcp 1251>NUL");
-					cout << "  ВВЕДИТЕ ПАРОЛЬ:    ";
+					cout << "  Р’Р’Р•Р”РРўР• РџРђР РћР›Р¬:    ";
 					system("chcp 866>NUL");
 					//cout << "ENTER PLAYER PASSWORD:";
 					SetColor(White, Black);
@@ -3710,26 +3710,26 @@ int main()
 					SetColor(White, Blue);
 					SetCursor(85, 24);
 					system("chcp 1251>NUL");
-					cout << "ПОЗДРАВЛЯЕМ !";
+					cout << "РџРћР—Р”Р РђР’Р›РЇР•Рњ !";
 					SetCursor(83, 25);
-					cout << "ИГРОК БЫЛ СОЗДАН!";
+					cout << "РР“Р РћРљ Р‘Р«Р› РЎРћР—Р”РђРќ!";
 					//cout << "CONGRATULATIONS!";
 					//SetCursor(79, 25);
 					//cout << "PLAYER HAS BEEN CREATED!";
 					SetCursor(82, 27);
-					cout << "ХОТИТЕ НАЧАТЬ ИГРУ?";
+					cout << "РҐРћРўРРўР• РќРђР§РђРўР¬ РР“Р РЈ?";
 					system("chcp 866>NUL");
 
 
 					boolchioce = PrintChoice(choice, yes_no, 20, 80, 30);
 					if (boolchioce)
 					{
-						// Создан первый игрок. Запускается функция игры 
+						// РЎРѕР·РґР°РЅ РїРµСЂРІС‹Р№ РёРіСЂРѕРє. Р—Р°РїСѓСЃРєР°РµС‚СЃСЏ С„СѓРЅРєС†РёСЏ РёРіСЂС‹ 
 						GameFunc(Cards, Player_Cards, Bot_Cards, Played_Cards, Battlefield, GamersTable, cards_number, cards_per_player, card_ico, 9, 25, card_width, card_height, activeuserslot, clsfone, 58, 178);
 						boolchioce = false;
 						startgame = false;
 					}
-					// Если пользователь создал первый аккаунт, но отказался от игры
+					// Р•СЃР»Рё РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ СЃРѕР·РґР°Р» РїРµСЂРІС‹Р№ Р°РєРєР°СѓРЅС‚, РЅРѕ РѕС‚РєР°Р·Р°Р»СЃСЏ РѕС‚ РёРіСЂС‹
 					else
 					{
 						startgame = false;
@@ -3739,7 +3739,7 @@ int main()
 					}
 
 				}
-				// Если пользователь отказался создавать первый аккаунт и отказался от игры
+				// Р•СЃР»Рё РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ РѕС‚РєР°Р·Р°Р»СЃСЏ СЃРѕР·РґР°РІР°С‚СЊ РїРµСЂРІС‹Р№ Р°РєРєР°СѓРЅС‚ Рё РѕС‚РєР°Р·Р°Р»СЃСЏ РѕС‚ РёРіСЂС‹
 				else
 				{
 					zrow = 25;
@@ -3747,7 +3747,7 @@ int main()
 					PrintCurrentFone(clsfone, zrow, zcol, (Color)Green, 65, 15);
 				}
 			}
-			// Если файл с аккаунтами прочитан и в нем есть данные об игроках запускается меню выбора игрока
+			// Р•СЃР»Рё С„Р°Р№Р» СЃ Р°РєРєР°СѓРЅС‚Р°РјРё РїСЂРѕС‡РёС‚Р°РЅ Рё РІ РЅРµРј РµСЃС‚СЊ РґР°РЅРЅС‹Рµ РѕР± РёРіСЂРѕРєР°С… Р·Р°РїСѓСЃРєР°РµС‚СЃСЏ РјРµРЅСЋ РІС‹Р±РѕСЂР° РёРіСЂРѕРєР°
 			else
 			{
 				zrow = 24;
@@ -3758,16 +3758,16 @@ int main()
 
 				SetCursor(84, 17);
 				system("chcp 1251>NUL");
-				cout << "ВЫБЕРИТЕ ИГРОКА:";
+				cout << "Р’Р«Р‘Р•Р РРўР• РР“Р РћРљРђ:";
 				SetCursor(70, 19);
 				/*cout << 'N'<<(char)248;*/
-				cout << "СЛОТ";
+				cout << "РЎР›РћРў";
 				SetCursor(79, 19);
-				cout << "ИГРОК";
+				cout << "РР“Р РћРљ";
 				SetCursor(96, 19);
-				cout << "ИГРЫ";
+				cout << "РР“Р Р«";
 				SetCursor(109, 19);
-				cout << "ПОБЕДЫ";
+				cout << "РџРћР‘Р•Р”Р«";
 				system("chcp 866>NUL");
 				//SetCursor(84, 17);
 				//cout << "CHOOSE A PLAYER:";
@@ -3782,7 +3782,7 @@ int main()
 				//cout << "WINS";
 				SetCursor(71, 21);
 				activeuserslot = UserChoice(GamersTable, FuncReadF_row_number(temp), (Color)White, (Color)Magenta);
-				// Если пользователь выбрал игрока - проверка пароля
+				// Р•СЃР»Рё РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ РІС‹Р±СЂР°Р» РёРіСЂРѕРєР° - РїСЂРѕРІРµСЂРєР° РїР°СЂРѕР»СЏ
 				if (activeuserslot != -1)
 				{
 					//bool chioce = true;
@@ -3790,14 +3790,14 @@ int main()
 					{
 						do
 						{
-							//Проверка пароля
+							//РџСЂРѕРІРµСЂРєР° РїР°СЂРѕР»СЏ
 							zrow = 9;
 							zcol = 40;
 							PrintCurrentFone(players_menu, zrow, zcol, (Color)White, (Color)Blue, 71, 22);
 							SetColor(White, Blue);
 							SetCursor(84, 23);
 							system("chcp 1251>NUL");
-							cout << "ВВЕДИТЕ ПАРОЛЬ:";
+							cout << "Р’Р’Р•Р”РРўР• РџРђР РћР›Р¬:";
 							system("chcp 866>NUL");
 							PrintCurrentFone(players_menu, 3, 32, (Color)White, (Color)Blue, 75, 24, false);
 							PrintCurrentFone(players_menu, 1, 30, (Color)Black, 76, 25);
@@ -3811,11 +3811,11 @@ int main()
 								SetColor(White, Green);
 								SetCursor(83, 27);
 								system("chcp 1251>NUL");
-								cout << " ПАРОЛЬ ПРИНЯТ ";
+								cout << " РџРђР РћР›Р¬ РџР РРќРЇРў ";
 								system("chcp 866>NUL");
 								SetColor(White, Black);
 								Sleep(sleep1000);
-								// Игрок выбран из списка. Запускается функция игры 
+								// РРіСЂРѕРє РІС‹Р±СЂР°РЅ РёР· СЃРїРёСЃРєР°. Р—Р°РїСѓСЃРєР°РµС‚СЃСЏ С„СѓРЅРєС†РёСЏ РёРіСЂС‹ 
 								GameFunc(Cards, Player_Cards, Bot_Cards, Played_Cards, Battlefield, GamersTable, cards_number, cards_per_player, card_ico, 9, 25, card_width, card_height, activeuserslot, clsfone, 58, 178);
 								boolchioce = false;
 								startgame = false;
@@ -3825,10 +3825,10 @@ int main()
 								SetColor(White, Red);
 								SetCursor(75, 27);
 								system("chcp 1251>NUL");
-								cout << " ДОСТУП ЗАПРЕЩЕН! НЕВЕРНЫЙ ПАРОЛЬ" << endl;
+								cout << " Р”РћРЎРўРЈРџ Р—РђРџР Р•Р©Р•Рќ! РќР•Р’Р•Р РќР«Р™ РџРђР РћР›Р¬" << endl;
 								SetCursor(82, 28);
 								SetColor(White, Blue);
-								cout << "ПОПРОБУЕТЕ ЕЩЕ РАЗ?";
+								cout << "РџРћРџР РћР‘РЈР•РўР• Р•Р©Р• Р РђР—?";
 								system("chcp 866>NUL");
 								SetColor(White, Black);
 								boolchioce = PrintChoice(choice, yes_no, 20, 80, 29);
@@ -3853,7 +3853,7 @@ int main()
 			}
 			SetColor(White, Black);
 		}
-		// Меню игроков
+		// РњРµРЅСЋ РёРіСЂРѕРєРѕРІ
 		if (activestring == 1)
 		{
 
@@ -3873,16 +3873,16 @@ int main()
 				SetColor(White, Magenta);
 				SetCursor(80, 17);
 				system("chcp 1251>NUL");
-				cout << "ЗАРЕГИСТРИРОВАННЫЕ ИГРОКИ:";
+				cout << "Р—РђР Р•Р“РРЎРўР РР РћР’РђРќРќР«Р• РР“Р РћРљР:";
 				SetCursor(70, 19);
 				/*cout << 'N'<<(char)248;*/
-				cout << "СЛОТ";
+				cout << "РЎР›РћРў";
 				SetCursor(79, 19);
-				cout << "ИГРОК";
+				cout << "РР“Р РћРљ";
 				SetCursor(96, 19);
-				cout << "ИГРЫ";
+				cout << "РР“Р Р«";
 				SetCursor(109, 19);
-				cout << "ПОБЕДЫ";
+				cout << "РџРћР‘Р•Р”Р«";
 				system("chcp 866>NUL");
 				if (file_error != 0 or file_size == 0)
 				{
@@ -3895,14 +3895,14 @@ int main()
 					SetColor(White, Red);
 					SetCursor(82, 25);
 					system("chcp 1251>NUL");
-					cout << "НЕТ ИГРОКОВ В СПИСКЕ!";
+					cout << "РќР•Рў РР“Р РћРљРћР’ Р’ РЎРџРРЎРљР•!";
 					SetCursor(76, 26);
-					cout << "ВЫ ХОТИТЕ СОЗДАТЬ НОВОГО ИГРОКА?";
+					cout << "Р’Р« РҐРћРўРРўР• РЎРћР—Р”РђРўР¬ РќРћР’РћР“Рћ РР“Р РћРљРђ?";
 					SetColor(White, Black);
 					boolchioce = PrintChoice(choice, yes_no, 20, 80, 28);
 					system("chcp 866>NUL");
 
-					// Запись первого игрока
+					// Р—Р°РїРёСЃСЊ РїРµСЂРІРѕРіРѕ РёРіСЂРѕРєР°
 					if (boolchioce)
 					{
 						SetColor(White, Blue);
@@ -3912,7 +3912,7 @@ int main()
 						cout << "                                ";
 						SetCursor(82, 26);
 						system("chcp 1251>NUL");
-						cout << "ВВЕДИТЕ ИМЯ ИГРОКА:";
+						cout << "Р’Р’Р•Р”РРўР• РРњРЇ РР“Р РћРљРђ:";
 						system("chcp 866>NUL");
 						SetCursor(71, 28);
 						PrintCurrentFone(players_menu, 3, 31, (Color)White, (Color)Blue, 76, 27, false);
@@ -3925,7 +3925,7 @@ int main()
 						cout << "                    ";
 						SetCursor(84, 26);
 						system("chcp 1251>NUL");
-						cout << "ВВЕДИТЕ ПАРОЛЬ:  ";
+						cout << "Р’Р’Р•Р”РРўР• РџРђР РћР›Р¬:  ";
 						system("chcp 866>NUL");
 						SetCursor(71, 28);
 						PrintCurrentFone(players_menu, 3, 31, (Color)White, (Color)Blue, 76, 27, false);
@@ -3937,9 +3937,9 @@ int main()
 						SetColor(White, Blue);
 						SetCursor(84, 27);
 						system("chcp 1251>NUL");
-						cout << "ПОЗДРАВЛЯЕМ!";
+						cout << "РџРћР—Р”Р РђР’Р›РЇР•Рњ!";
 						SetCursor(81, 28);
-						cout << "ИГРОК БЫЛ СОЗДАН!";
+						cout << "РР“Р РћРљ Р‘Р«Р› РЎРћР—Р”РђРќ!";
 						system("chcp 866>NUL");
 						AddDataToGamersTable(GamersTable, currentusername, currentuserpassword);
 						AddGamersTableRowDataToFile(GamersTable->user_id, GamersTable->name, GamersTable->password, GamersTable->games, GamersTable->wins);
@@ -3948,15 +3948,15 @@ int main()
 						SetColor(White, Magenta);
 						SetCursor(80, 17);
 						system("chcp 1251>NUL");
-						cout << "ЗАРЕГИСТРИРОВАННЫЕ ИГРОКИ:";
+						cout << "Р—РђР Р•Р“РРЎРўР РР РћР’РђРќРќР«Р• РР“Р РћРљР:";
 						SetCursor(70, 19);
-						cout << "СЛОТ";
+						cout << "РЎР›РћРў";
 						SetCursor(79, 19);
-						cout << "ИГРОК";
+						cout << "РР“Р РћРљ";
 						SetCursor(96, 19);
-						cout << "ИГРЫ";
+						cout << "РР“Р Р«";
 						SetCursor(109, 19);
-						cout << "ПОБЕДЫ";
+						cout << "РџРћР‘Р•Р”Р«";
 						system("chcp 866>NUL");
 					}
 					else
@@ -3965,31 +3965,31 @@ int main()
 						SetColor(White, Magenta);
 						SetCursor(80, 17);
 						system("chcp 1251>NUL");
-						cout << "ЗАРЕГИСТРИРОВАННЫЕ ИГРОКИ:";
+						cout << "Р—РђР Р•Р“РРЎРўР РР РћР’РђРќРќР«Р• РР“Р РћРљР:";
 						SetCursor(70, 19);
-						cout << "СЛОТ";
+						cout << "РЎР›РћРў";
 						SetCursor(79, 19);
-						cout << "ИГРОК";
+						cout << "РР“Р РћРљ";
 						SetCursor(96, 19);
-						cout << "ИГРЫ";
+						cout << "РР“Р Р«";
 						SetCursor(109, 19);
-						cout << "ПОБЕДЫ";
+						cout << "РџРћР‘Р•Р”Р«";
 						system("chcp 866>NUL");
 					}
 				}
-				// Запись данных из файла в структуру
+				// Р—Р°РїРёСЃСЊ РґР°РЅРЅС‹С… РёР· С„Р°Р№Р»Р° РІ СЃС‚СЂСѓРєС‚СѓСЂСѓ
 				ReadFileToGamersTable(GamersTable, FuncReadF_row_number(temp));
 				ShowGamersTable(GamersTable, FuncReadF_row_number(temp), (Color)White, (Color)Magenta, 70, 21, 9, 26, 39);
 				choisekey = PrintChoice(editplayersmenu, menustrings, (Color)Red, (Color)White, 17, 68, 37);
 
-				// Создание игрока и проверка на предельное количество игроков
+				// РЎРѕР·РґР°РЅРёРµ РёРіСЂРѕРєР° Рё РїСЂРѕРІРµСЂРєР° РЅР° РїСЂРµРґРµР»СЊРЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ РёРіСЂРѕРєРѕРІ
 				if (choisekey == 0 and FuncReadF_row_number(temp) < maxplayerslot)
 				{
 					NewPlayerWindow(players_menu, 0, 0, (Color)Green, (Color)White, (Color)Blue, 8, 41, 65, 20, 71, 23);
 					SetColor(White, Blue);
 					SetCursor(82, 26);
 					system("chcp 1251>NUL");
-					cout << "ВВЕДИТЕ ИМЯ ИГРОКА:";
+					cout << "Р’Р’Р•Р”РРўР• РРњРЇ РР“Р РћРљРђ:";
 					system("chcp 866>NUL");
 					SetCursor(71, 28);
 					PrintCurrentFone(players_menu, 3, 31, (Color)White, (Color)Blue, 76, 27, false);
@@ -3997,7 +3997,7 @@ int main()
 					SetCursor(77, 28);
 					currentusername = Login_Password();
 					//cin >> currentusername;
-					// Проверка на уже существующего пользователя
+					// РџСЂРѕРІРµСЂРєР° РЅР° СѓР¶Рµ СЃСѓС‰РµСЃС‚РІСѓСЋС‰РµРіРѕ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
 					bool nocurrentuser = true;
 					for (size_t i = 0; i < FuncReadF_row_number(temp); i++)
 					{
@@ -4013,7 +4013,7 @@ int main()
 						cout << "                  ";
 						SetCursor(84, 26);
 						system("chcp 1251>NUL");
-						cout << "ВВЕДИТЕ ПАРОЛЬ:  ";
+						cout << "Р’Р’Р•Р”РРўР• РџРђР РћР›Р¬:  ";
 						system("chcp 866>NUL");
 						SetCursor(71, 28);
 						PrintCurrentFone(players_menu, 3, 31, (Color)White, (Color)Blue, 76, 27, false);
@@ -4027,9 +4027,9 @@ int main()
 						SetColor(White, Blue);
 						SetCursor(86, 26);
 						system("chcp 1251>NUL");
-						cout << "ПОЗДРАВЛЯЕМ!";
+						cout << "РџРћР—Р”Р РђР’Р›РЇР•Рњ!";
 						SetCursor(83, 27);
-						cout << "ИГРОК БЫЛ СОЗДАН!";
+						cout << "РР“Р РћРљ Р‘Р«Р› РЎРћР—Р”РђРќ!";
 						system("chcp 866>NUL");
 						Sleep(sleep1000);
 					}
@@ -4039,7 +4039,7 @@ int main()
 						SetColor(White, Red);
 						SetCursor(74, 11);
 						system("chcp 1251>NUL");
-						cout << "ИГРОК УЖЕ СОЗДАН! ВВЕДИТЕ ДРУГОЕ ИМЯ";
+						cout << "РР“Р РћРљ РЈР–Р• РЎРћР—Р”РђРќ! Р’Р’Р•Р”РРўР• Р”Р РЈР“РћР• РРњРЇ";
 						system("chcp 866>NUL");
 						Info_OK((Color)Red, (Color)White, 91, 12);
 						PrintCurrentFone(players_menu, 5, 54, (Color)Green, 65, 10);
@@ -4064,21 +4064,21 @@ int main()
 					SetColor(White, Red);
 					SetCursor(67, 11);
 					system("chcp 1251>NUL");
-					cout << "ВСЕ СЛОТЫ ИСПОЛЬЗУЮТСЯ. УДАЛИТЕ ОДНОГО ИЗ ИГРОКОВ";
+					cout << "Р’РЎР• РЎР›РћРўР« РРЎРџРћР›Р¬Р—РЈР®РўРЎРЇ. РЈР”РђР›РРўР• РћР”РќРћР“Рћ РР— РР“Р РћРљРћР’";
 					//cout << "ALL SLOTS ARE USED. REMOVE ONE OF THE PLAYERS";
 					system("chcp 866>NUL");
 					Info_OK((Color)Red, (Color)White, 91, 12);
 					PrintCurrentFone(players_menu, 5, 54, (Color)Green, 65, 10);
 				}
 
-				// Удаление пользователя
+				// РЈРґР°Р»РµРЅРёРµ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
 				if (choisekey == 1)
 				{
 					PrintCurrentFone(players_menu, 6, 53, (Color)White, (Color)Red, 65, 8);
 					SetColor(White, Red);
 					SetCursor(72, 9);
 					system("chcp 1251>NUL");
-					cout << "ВВЕДИТЕ НОМЕР СЛОТА ДЛЯ УДАЛЕНИЯ ИГРОКА";
+					cout << "Р’Р’Р•Р”РРўР• РќРћРњР•Р  РЎР›РћРўРђ Р”Р›РЇ РЈР”РђР›Р•РќРРЇ РР“Р РћРљРђ";
 					//cout << "ENTER SLOT NUMBER TO REMOVE A PLAYER";
 					system("chcp 866>NUL");
 					//Info_OK((Color)Red, (Color)White, 91, 12);
@@ -4099,7 +4099,7 @@ int main()
 						cout << "                                       ";
 						//cout << "ENTER SLOT NUMBER TO REMOVE A PLAYER";
 						SetCursor(72, 10);
-						cout << "НЕВЕРНЫЙ НОМЕР СЛОТА! ПОПРОБУЙТЕ СНОВА";
+						cout << "РќР•Р’Р•Р РќР«Р™ РќРћРњР•Р  РЎР›РћРўРђ! РџРћРџР РћР‘РЈР™РўР• РЎРќРћР’Рђ";
 						//cout << "INCORRECT SLOT NUMBER! TRY AGAIN";
 						system("chcp 866>NUL");
 						Info_OK((Color)Red, (Color)White, 91, 12);
@@ -4107,7 +4107,7 @@ int main()
 					PrintCurrentFone(players_menu, 7, 54, (Color)Green, 65, 8);
 				}
 
-				//Выход
+				//Р’С‹С…РѕРґ
 				if (choisekey == 2)
 				{
 					SetCursor(71, 28);
